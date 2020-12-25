@@ -1,0 +1,19 @@
+* {
+    outline-width: 1px;
+    outline-style: solid;
+    outline-color: red;
+  }
+
+.page {
+    max-width: 1280px;
+    margin: 0 auto;
+    font-family: Inter, Arial, Helvetica, sans-serif;
+    color: #fff;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+ }
+
+ input::-ms-input-placeholder {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+ }

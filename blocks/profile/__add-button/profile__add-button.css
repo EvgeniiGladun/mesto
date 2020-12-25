@@ -1,0 +1,28 @@
+.profile__add-button {
+    display: flex;
+    height: 50px;
+    width: 150px;
+    margin: 35px 0 35px 0;
+    padding-left: 65px;
+    border: 2px solid white;
+    border-color: #fff;
+    background-color: rgba(255, 255, 255, 0);
+    color: #fff;
+    font-size: 30px;
+    font-weight:100;
+    align-items: center;
+}
+
+.profile__add-button:hover {
+    border: 2px solid rgb(151, 151, 151);
+    color: rgb(151, 151, 151);
+}
+
+@media (max-width:910px) {
+    .profile__add-button {
+    font-size: 26px;
+    padding-left: 50%;
+    width: 282px;
+    } 
+    
+    }

@@ -1,0 +1,102 @@
+/** Сброс стилей браузера **/
+@import url(../vendor/normalize.css);
+
+/** body сайта **/
+@import url(../blocks/body/body.css);
+
+/** page сайта **/
+@import url(../blocks/page/page.css);
+
+
+
+/** header сайта **/
+@import url(../blocks/header/header.css);
+
+/** logo сайта **/
+@import url(../blocks/logo/logo.css);
+
+
+
+/** profile сайта **/
+@import url(../blocks/profile/profile.css);
+
+/** avatar сайта **/
+@import url(../blocks/profile/__avatar/profile__avatar.css);
+
+/** info сайта **/
+@import url(../blocks/profile/__info/profile__info.css);
+
+/** name сайта **/
+@import url(../blocks/profile/__name/profile__name.css);
+
+/** specialty сайта **/
+@import url(../blocks/profile/__specialty/profile__specialty.css);
+
+/** edit-button сайта **/
+@import url(../blocks/profile/__edit-button/profile__edit-button.css);
+
+/** edit-button сайта **/
+@import url(../blocks/profile/__add-button/profile__add-button.css);
+
+
+
+/** cards сайта **/
+@import url(../blocks/cards/cards.css);
+
+/** card сайта **/
+@import url(../blocks/cards/__card/cards__card.css);
+
+/** cards__image сайта **/
+@import url(../blocks/cards/__image/cards__image.css);
+
+/** discrition сайта **/
+@import url(../blocks/cards/__discrition/cards__discription.css);
+
+/** cards__title сайта **/
+@import url(../blocks/cards/__title/cards__title.css);
+
+/** rectangle сайта **/
+@import url(../blocks/cards/__rectangle/cards__rectangle.css);
+
+/** rectangle_like сайта **/
+@import url(../blocks/cards/__rectangle/_like/cards__rectangle_like.css);
+
+
+
+/** footer сайта **/
+@import url(../blocks/footer/footer.css);
+
+/** __copyright сайта **/
+@import url(../blocks/footer/__copyright/footer__copyright.css);
+
+
+
+/** popup сайта **/
+@import url(../blocks/popup/popup.css);
+
+/** __container сайта **/
+@import url(../blocks/popup/__container/popup__container.css);
+
+/** _opened сайта **/
+@import url(../blocks/popup/_opened/popup_opened.css);
+
+/** __close сайта **/
+@import url(../blocks/popup/__close/popup__close.css);
+
+/** __save сайта **/
+@import url(../blocks/popup/__save/popup__save.css);
+
+/** __title сайта **/
+@import url(../blocks/popup/__title/popup__title.css);
+
+/** __text сайта **/
+@import url(../blocks/popup/__text/popup__text.css);
+
+/** __form сайта **/
+@import url(../blocks/popup/__form/popup__form.css);
+
+/** _name сайта **/
+@import url(../blocks/popup/__text/_name/popup__text_name.css);
+
+/** _specialty сайта **/
+@import url(../blocks/popup/__text/_specialty/popup__text_specialty.css);

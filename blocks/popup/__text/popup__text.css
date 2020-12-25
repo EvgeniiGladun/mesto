@@ -1,0 +1,7 @@
+.popup__text {
+    margin: 0 auto 44px;
+    padding: 0;
+    width: 100%;
+    border:none;
+    border-bottom: 1px solid #000;
+}
