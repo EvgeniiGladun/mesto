@@ -1,0 +1,5 @@
+.cards__discription {
+    display: flex;
+    max-width: 246px;
+    margin: auto;
+}

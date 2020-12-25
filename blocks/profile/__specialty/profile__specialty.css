@@ -1,0 +1,16 @@
+.profile__specialty {
+    margin: 16px 0 0;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+@media (max-width:910px) {
+    .profile__specialty {
+    margin-top: 14px;
+    padding-left: 25%;
+    font-size: 14px;
+    line-height: 17px;
+    } 
+    
+    }

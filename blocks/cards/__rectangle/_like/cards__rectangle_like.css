@@ -1,0 +1,9 @@
+.cards__rectangle_like {
+    background-image: url(/images/favicon-icon/Vector.svg);
+    background-repeat: no-repeat;
+    background-color: white;
+    margin: auto 0 auto 0;
+    border: 0;
+    width: 20px;
+    height: 20px;
+}

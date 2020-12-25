@@ -1,0 +1,22 @@
+.popup__close {
+    width: 40px;
+    height: 40px;
+    background-position: center;
+    background-image: url(/images/edit-button/Close-Icon.svg);
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: 100%;
+    left: 100%;
+}
+
+.popup__close:hover {
+    background-image: url(/images/edit-button/Close-Icon2.svg);
+}
+
+@media (max-width:390px) {
+    .popup__close {
+    bottom: 105%;
+    left: 86%;
+    } 
+    
+    }
