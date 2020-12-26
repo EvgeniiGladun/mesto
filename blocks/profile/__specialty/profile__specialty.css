@@ -8,9 +8,9 @@
 @media (max-width:910px) {
     .profile__specialty {
     margin-top: 14px;
-    padding-left: 25%;
     font-size: 14px;
     line-height: 17px;
+    text-align: center;
     } 
     
     }
