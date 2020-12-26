@@ -1,7 +1,7 @@
 .profile__edit-button {
     display: flex;
     background-repeat: no-repeat;
-    background-image: url(/images/edit-button/Vector.svg);
+    background-image: url(../../../images/edit-button/Vector.svg);
     background-color: rgba(0, 0, 0, 0);
     border: 0;
     margin: 37px auto 59px 18px;
@@ -10,7 +10,7 @@
 }
 
 .profile__edit-button:hover {
-    background-image: url(/images/edit-button/Edit-Button-dark.svg);
+    background-image: url(../../../images/edit-button/Edit-Button-dark.svg);
 }
 
 @media (max-width:910px) {
