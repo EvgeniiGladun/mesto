@@ -1,9 +1,3 @@
-* {
-    outline-width: 1px;
-    outline-style: solid;
-    outline-color: red;
-  }
-
 .page {
     max-width: 1280px;
     margin: 0 auto;
