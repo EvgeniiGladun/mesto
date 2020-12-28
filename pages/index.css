@@ -7,6 +7,9 @@
 /** page сайта **/
 @import url(../blocks/page/page.css);
 
+/** fonts подключенные шрифты **/
+@import url(../vendor/fonts/fonts.css);
+
 
 
 /** header сайта **/
@@ -31,6 +34,9 @@
 
 /** specialty сайта **/
 @import url(../blocks/profile/__specialty/profile__specialty.css);
+
+/** __edit-user сайта **/
+@import url(../blocks/profile/__edit-user/profile__edit-user.css);
 
 /** edit-button сайта **/
 @import url(../blocks/profile/__edit-button/profile__edit-button.css);
