@@ -1,4 +1,4 @@
-.cards__rectangle_like {
+.cards__rectangle-like {
     background-image: url(../../../../images/favicon-icon/Vector.svg);
     background-repeat: no-repeat;
     background-color: white;
@@ -6,4 +6,13 @@
     border: 0;
     width: 20px;
     height: 20px;
+}
+
+.cards__rectangle-like:hover {
+    opacity: 0.5;
+    outline: none;
+}
+
+.cards__rectangle-like:focus {
+    outline: none;
 }

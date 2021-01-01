@@ -8,9 +8,9 @@
 
 @media (max-width:550px) {
     .popup__title {
-    max-width: 238px;
-    font-size: 15px;
-    line-height: 22px;
-    } 
-    
+        margin-bottom: 74px;
+        max-width: 238px;
+        font-size: 18px;
+        line-height: 22px;
     }
+}

@@ -10,8 +10,7 @@
 
 @media (max-width:910px) {
     .cards {
-    max-width: 282px;
-    margin-bottom: 48px;
-    } 
-    
+        max-width: 282px;
+        margin-bottom: 48px;
     }
+}
