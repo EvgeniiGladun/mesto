@@ -2,13 +2,11 @@
     display: flex;
     margin: 0;
     width: 350px;
-    height: 65px;
 }
 
 @media (max-width:910px) {
     .profile__edit-user {
-    max-width: 220px;
-    margin: auto;
-    } 
-    
+        max-width: 220px;
+        margin: auto;
     }
+}

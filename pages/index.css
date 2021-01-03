@@ -1,14 +1,14 @@
 /** Сброс стилей браузера **/
 @import url(../vendor/normalize.css);
 
+/** fonts подключенные шрифты **/
+@import url(../vendor/fonts/fonts.css);
+
 /** body сайта **/
 @import url(../blocks/body/body.css);
 
 /** page сайта **/
 @import url(../blocks/page/page.css);
-
-/** fonts подключенные шрифты **/
-@import url(../vendor/fonts/fonts.css);
 
 
 
@@ -61,11 +61,8 @@
 /** cards__title сайта **/
 @import url(../blocks/cards/__title/cards__title.css);
 
-/** rectangle сайта **/
-@import url(../blocks/cards/__rectangle/cards__rectangle.css);
-
-/** rectangle_like сайта **/
-@import url(../blocks/cards/__rectangle/_like/cards__rectangle_like.css);
+/** rectangle-like сайта **/
+@import url(../blocks/cards/__rectangle-like/cards__rectangle-like.css);
 
 
 
@@ -100,9 +97,3 @@
 
 /** __form сайта **/
 @import url(../blocks/popup/__form/popup__form.css);
-
-/** _name сайта **/
-@import url(../blocks/popup/__text/_name/popup__text_name.css);
-
-/** _specialty сайта **/
-@import url(../blocks/popup/__text/_specialty/popup__text_specialty.css);

@@ -1,7 +1,21 @@
 .popup__text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
     margin: 0 auto 44px;
-    padding: 0;
+    padding: 0 0 13px;
     width: 100%;
-    border:none;
+    border: none;
+    border-radius: 2%;
     border-bottom: 1px solid #000;
+    opacity: 0.2;
+}
+
+@media (max-width:550px) {
+    .popup__text {
+        margin: 0 auto 21px;
+    }
+    .popup__text:last-of-type {
+        margin-bottom: 45px;
+    }
 }

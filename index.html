@@ -1,102 +1,99 @@
 <!DOCTYPE html>
 <html lang="ru">
+    <!-- Вверх сайта -->
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./pages/index.css">
+        <title>Mesto</title>
+    </head>
 
-<!-- Вверх сайта -->
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./pages/index.css">
-    <title>Mesto</title>
-</head>
+    <!-- Тело сайта -->
+    <body class="body">
+        <div class="page">
+            <header class="header">
+                <img src="./images/logo.svg" alt="Логотип MESTO" class="logo">
+            </header>
 
-<!-- Тело сайта -->
-<body class="body">
-    <div class="page">
-<header class="header">
-    <img src="./images/Vector.svg" alt="Логотип MESTO" class="logo">
-</header>
+            <!-- Информация о пользователе -->
+            <section class="profile">
+                <img src="./images/avatar/image.jpg" alt="Фото профиля" class="profile__avatar">
+                <div class="profile__info">
+                    <div class="profile__edit-user">
+                        <h1 class="profile__name">Жак-Ив Кусто</h1>
+                        <button class="profile__edit-button" aria-label="Edit" type="button"><img src="./images/edit-button/edit-button.svg" alt="Кнопка редактирования профиля"></button>
+                    </div>
+                    <h2 class="profile__specialty">Исследователь океана</h2>
+                </div>
+                <button class="profile__add-button" aria-label="Add" type="button"></button>
+            </section>
+        </div>
 
-<!-- Информация о пользователе -->
-<div class="profile">
-    <img src="./images/avatar/image.jpg" alt="Фото профиля" class="profile__avatar">
-   <div class="profile__info">
-        <div class="profile__edit-user">
-    <h1 class="profile__name">Жак-Ив Кусто</h1>
-    <button class="profile__edit-button"></button>
-        </div> 
-    <h2 class="profile__specialty">Исследователь океана</h2>
-</div>
-<button class="profile__add-button">+</button>
-</div>
-    </div>
+        <!-- Раздел с карточками сайта -->
+        <section class="cards">
+            <div class="cards__card">
+                <img class="cards__image" src="./images/cards-img/img01.jpg" alt="Заброшеный храм" />
+                <div class="cards__discription">
+                    <h2 class="cards__title">Карачаево-Черкессия</h2>
+                    <button class="cards__rectangle-like" type="button"></button>
+                </div>
+            </div>
+            <div class="cards__card">
+                <img class="cards__image" src="./images/cards-img/img02.jpg" alt="Фото с горами" />
+                <div class="cards__discription">
+                    <h2 class="cards__title">Гора Эльбрус</h2>
+                    <button class="cards__rectangle-like" type="button"></button>
+                </div>
+            </div>
+            <div class="cards__card">
+                <img class="cards__image" src="./images/cards-img/img03.jpg" alt="Фото с птичего полёта" />
+                <div class="cards__discription">
+                    <h2 class="cards__title">Домбай</h2>
+                    <button class="cards__rectangle-like" type="button"></button>
+                </div>
+            </div>
+            <div class="cards__card">
+                <img class="cards__image" src="./images/cards-img/img03.jpg" alt="Фото с птичего полёта" />
+                <div class="cards__discription">
+                    <h2 class="cards__title">Домбай</h2>
+                    <button class="cards__rectangle-like" type="button"></button>
+                </div>
+            </div>
+            <div class="cards__card">
+                <img class="cards__image" src="./images/cards-img/img02.jpg" alt="Фото с горами" />
+                <div class="cards__discription">
+                    <h2 class="cards__title">Гора Эльбрус</h2>
+                    <button class="cards__rectangle-like" type="button"></button>
+                </div>
+            </div>
+            <div class="cards__card">
+                <img class="cards__image" src="./images/cards-img/img01.jpg" alt="Заброшеный храм" />
+                <div class="cards__discription">
+                    <h2 class="cards__title">Карачаево-Черкессия</h2>
+                    <button class="cards__rectangle-like" type="button"></button>
+                </div>
+            </div>
+        </section>
 
- <!-- Раздел с карточками сайта -->
-    <section class="cards">
-        <div class="cards__card">
-            <img class="cards__image" src="./images/cards-img/img01.jpg" alt="Заброшеный храм">
-            <div class="cards__discription">
-                <h2 class="cards__title">Карачаево-Черкессия</h2>
-                <button class="cards__rectangle cards__rectangle_like"></button>
-        </div>
-        </div>
-        <div class="cards__card">
-            <img class="cards__image" src="./images/cards-img/img02.jpg" alt="Фото с горами">
-            <div class="cards__discription">
-                <h2 class="cards__title">Гора Эльбрус</h2>
-                <button class="cards__rectangle cards__rectangle_like"></button>
-        </div>
-        </div>
-        <div class="cards__card">
-            <img class="cards__image" src="./images/cards-img/img03.jpg" alt="Фото с птичего полёта">
-            <div class="cards__discription">
-                <h2 class="cards__title">Домбай</h2>
-                <button class="cards__rectangle cards__rectangle_like"></button>
-        </div>
-        </div>
-        <div class="cards__card">
-            <img class="cards__image" src="./images/cards-img/img03.jpg" alt="Фото с птичего полёта">
-            <div class="cards__discription">
-                <h2 class="cards__title">Домбай</h2>
-                <button class="cards__rectangle cards__rectangle_like"></button>
-        </div>
-        </div>
-        <div class="cards__card">
-            <img class="cards__image" src="./images/cards-img/img02.jpg" alt="Фото с горами">
-            <div class="cards__discription">
-                <h2 class="cards__title">Гора Эльбрус</h2>
-                <button class="cards__rectangle cards__rectangle_like"></button>
-        </div>
-        </div>
-        <div class="cards__card">
-            <img class="cards__image" src="./images/cards-img/img01.jpg" alt="Заброшеный храм">
-            <div class="cards__discription">
-                <h2 class="cards__title">Карачаево-Черкессия</h2>
-                <button class="cards__rectangle cards__rectangle_like"></button>
-        </div>
-        </div>
-    </section>
+        <!-- Подвал сайта -->
+        <footer class="footer">
+            <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
+        </footer>
 
-    <!-- Подвал сайта -->
-    <section class="footer">
-        <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
-    </section>
-
-    <!-- Модальное окно -->
-    <div class="popup">
-        <div class="popup__container">
-            <div class="popup__close"></div>
-            <h2 class="popup__title">Редактировать профиль</h2>
-            <form class="popup__form" action="">
-            <input class="popup__text popup__text_name" type="text" id="name" name="name" required
-                   minlength="4" maxlength="28">
-            <input class="popup__text popup__text_specialty" type="text" id="specialty" name="specialty" required
-       minlength="4" maxlength="28">
-            <button class="popup__save" type="submit">Сохранить</button>
-        </form>
+        <!-- Модальное окно -->
+        <div class="popup">
+            <div class="popup__container">
+                <button class="popup__close" type="reset"></button>
+                <h2 class="popup__title">Редактировать профиль</h2>
+                <form class="popup__form" action="form-user" name="form-user">
+                    <input class="popup__text popup__text_user_name" type="text" id="name" name="name" required minlength="4" maxlength="28" />
+                    <input class="popup__text popup__text_user_specialty" type="text" id="specialty" name="specialty" required minlength="4" maxlength="28" />
+                    <button class="popup__save" type="submit">Сохранить</button>
+                </form>
+            </div>
         </div>
-      </div>
-      
-      <!-- Подключение js и других скриптов -->
-      <script src="./script.js"></script>
-</body>
+
+        <!-- Подключение js и других скриптов -->
+        <script src="./scripts/script.js"></script>
+    </body>
 </html>

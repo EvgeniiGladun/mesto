@@ -6,9 +6,8 @@
 
 @media (max-width:910px) {
     .profile {
-    max-width: 282px;
-    display: block;
-    margin: 42px auto;
-    } 
-    
+        max-width: 282px;
+        display: block;
+        margin: 42px auto;
     }
+}
