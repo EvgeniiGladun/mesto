@@ -8,6 +8,7 @@
     background-image: url(../../../images/add-button/vector-plus.svg);
     background-repeat: no-repeat;
     background-position: center;
+    background-size: 22px;
 }
 
 .profile__add-button:focus {
@@ -22,5 +23,6 @@
     .profile__add-button {
         margin-top: 36px;
         padding: 50px 98% 0 0;
+        background-size: 16px;
     }
 }

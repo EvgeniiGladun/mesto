@@ -44,6 +44,9 @@
 /** edit-button сайта **/
 @import url(../blocks/profile/__add-button/profile__add-button.css);
 
+/** _size сайта **/
+@import url(../blocks/profile/__edit-img/profile__edit-img.css);
+
 
 
 /** cards сайта **/

@@ -8,14 +8,14 @@ let inputUserSpecialty = document.querySelector(".popup__text_user_specialty");
 let profileName = document.querySelector(".profile__name");
 let profileSpecialty = document.querySelector(".profile__specialty");
 
-function openedPopup(popup) {
+function openedPopup() {
     inputUserName.value = profileName.textContent;
     inputUserSpecialty.value = profileSpecialty.textContent;
-    popup.classList.add("popup_opened");
+    editPopup.classList.add("popup_opened");
 }
 
-function closePopup(popup) {
-    popup.classList.remove("popup_opened");
+function closePopup() {
+    editPopup.classList.remove("popup_opened");
 }
 
 function formSubmitHandler(evt) {
@@ -25,12 +25,8 @@ function formSubmitHandler(evt) {
     closePopup(editPopup);
 }
 
-buttonEditPopup.addEventListener("click", function () {
-    openedPopup(editPopup);
-});
+buttonEditPopup.addEventListener("click", openedPopup);
 
-buttonEditPopupClose.addEventListener("click", function () {
-    closePopup(editPopup);
-});
+buttonEditPopupClose.addEventListener("click", closePopup);
 
 formElement.addEventListener("submit", formSubmitHandler);
