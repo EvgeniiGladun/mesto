@@ -67,6 +67,12 @@
 /** rectangle-like сайта **/
 @import url(../blocks/cards/__rectangle-like/cards__rectangle-like.css);
 
+/** rectangle-like_active сайта **/
+@import url(../blocks/cards/__rectangle-like/_active/cards__rectangle-like_active.css);
+
+/** rectangle-remove сайта **/
+@import url(../blocks/cards/__rectangle-remove/cards__rectangle-remove.css);
+
 
 
 /** footer сайта **/
@@ -100,3 +106,6 @@
 
 /** __form сайта **/
 @import url(../blocks/popup/__form/popup__form.css);
+
+/** popup-image сайта **/
+@import url(../blocks/popup-image/popup-image.css);
