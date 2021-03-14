@@ -107,5 +107,8 @@
 /** __form сайта **/
 @import url(../blocks/popup/__form/popup__form.css);
 
-/** popup-image сайта **/
-@import url(../blocks/popup-image/popup-image.css);
+
+/** popup для картинок сайта **/
+@import url(../blocks/popup/__img/popup__img.css);
+@import url(../blocks/popup/__container/_img/popup__container_img.css);
+@import url(../blocks/popup/__title/_img/popup__title_img.css);
