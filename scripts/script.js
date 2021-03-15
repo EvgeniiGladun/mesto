@@ -71,7 +71,7 @@ function formAddSubmitHandler(evt) {
     evt.preventDefault();
     const inputTextLink = inputLinkElements.value;
     const inputTextTitle = inputTitleElements.value;
-    let data = {
+    const data = {
         name: inputTextTitle,
         link: inputTextLink
     };
@@ -103,7 +103,8 @@ function composeItem(item) {
     const headerElemets = newItem.querySelector('.cards__title');
     const linkElemets = newItem.querySelector('.cards__image');
     headerElemets.textContent = item.name;
-    linkElemets.setAttribute('src', item.link);
+    linkElemets.alt = item.name;
+    linkElemets.setAttribute('src', item.link, item.name);
     newItem.querySelector('.cards__rectangle-like').addEventListener('click', function (evt) {
         evt.target.classList.toggle('cards__rectangle-like_active');
     });
@@ -127,6 +128,7 @@ function removeItem(event) {
 function openCardImage (name, link) {
     cardTitleImage.textContent = name;
     fullImgFoto.src = link;
+    fullImgFoto.alt = name;
 
     openedPopup(cardImgPopup);
 }
