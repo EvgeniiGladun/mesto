@@ -119,9 +119,7 @@ function composeItem(item) {
 }
 
 function removeItem(event) {
-    const targetElement = event.target;
-    const targetItem = targetElement.closest('.cards__card');
-    targetItem.remove();
+    event.target.closest('.cards__card').remove()
 }
 
 
