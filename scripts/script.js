@@ -56,12 +56,19 @@ const cardImgPopup = document.querySelector('.popup-img');
 const cardTitleImage = document.querySelector('.popup__title_img');
 const cardCloseImg = document.querySelector('.popup-img__close');
 const fullImgFoto = document.querySelector('.popup__img');
+const popupActive = document.querySelector('.popup_opened');
 
 
 // Модальное окно 'редактирование профиля'
 function openedPopup(modal) {
     modal.classList.add('popup_opened');
 }
+
+function handlerOverley(evt) {
+    if (!evt.target.closest('.popup__container')) {
+            closePopup(evt.target.closest('.popup'));
+        }
+    }
 
 function closePopup(modal) {
     modal.classList.remove('popup_opened');
@@ -97,7 +104,6 @@ function renderList() {
 }
 
 
-
 function composeItem(item) {
     const newItem = templateElements.content.cloneNode(true);
     const headerElemets = newItem.querySelector('.cards__title');
@@ -113,7 +119,7 @@ function composeItem(item) {
 
     linkElemets.addEventListener('click', () => {
         openCardImage(item.name, item.link)
-       });
+    });
 
     return newItem;
 }
@@ -123,13 +129,19 @@ function removeItem(event) {
 }
 
 
-function openCardImage (name, link) {
+function openCardImage(name, link) {
     cardTitleImage.textContent = name;
     fullImgFoto.src = link;
     fullImgFoto.alt = name;
 
     openedPopup(cardImgPopup);
 }
+
+document.addEventListener('keydown', (evt) => {
+    if (evt.key == 'Escape') {
+        closePopup(document.querySelector('.popup_opened'));
+    }
+    });
 
 // Модальное окно 'редактирование профиля'
 buttonEditPopup.addEventListener('click', function () {
@@ -147,7 +159,6 @@ formElement.addEventListener('submit', formSubmitHandler);
 // Модальное окно 'Добавление места'
 buttonAddPopup.addEventListener('click', function () {
     openedPopup(addPopup);
-
 });
 
 buttonAddPopupClose.addEventListener('click', function () {
@@ -160,5 +171,11 @@ cardCloseImg.addEventListener('click', function () {
 });
 
 formAddCardsElement.addEventListener('submit', formAddSubmitHandler);
+
+editPopup.addEventListener('click', handlerOverley);
+
+addPopup.addEventListener('click', handlerOverley);
+
+cardImgPopup.addEventListener('click', handlerOverley);
 
 renderList();

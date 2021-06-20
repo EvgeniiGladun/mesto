@@ -98,11 +98,20 @@
 /** __save сайта **/
 @import url(../blocks/popup/__save/popup__save.css);
 
+/** __save_disabled сайта **/
+@import url(../blocks/popup/__save/_disabled/popup__save_disabled.css);
+
 /** __title сайта **/
 @import url(../blocks/popup/__title/popup__title.css);
 
 /** __text сайта **/
 @import url(../blocks/popup/__text/popup__text.css);
+
+/** __text_type_error сайта **/
+@import url(../blocks/popup/__text/_type/_error/popup__text_type_error.css);
+
+/** __text_type_error сайта **/
+@import url(../blocks/popup/__text-error/popup__text-error.css);
 
 /** __form сайта **/
 @import url(../blocks/popup/__form/popup__form.css);
