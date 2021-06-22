@@ -16,22 +16,6 @@
     margin-top: 0;
 }
 
-.popup__text:hover {
-    border-bottom-color: #000;
-}
-  
-.popup__text:focus {
-    border-bottom-color: #007DFF;
-}
-
-.popup__text:valid {
-    border-bottom: 1px solid green;
-}
-  
-.popup__text:invalid {
-    border-bottom: 1px solid red;
-}
-
 @media (max-width:550px) {
     .popup__text {
         margin: 0 auto 21px;

@@ -32,10 +32,11 @@ const initialCards = [
 const buttonEditPopup = document.querySelector('.profile__edit-button');
 const buttonEditPopupClose = document.querySelector('.popup__close');
 const editPopup = document.querySelector('.popup');
-const formElement = document.querySelector('.popup__form');
+const formEditProfile = document.querySelector('.popup__form');
 const buttonAddPopup = document.querySelector('.profile__add-button');
+const buttonAddPopupSubmit = document.querySelector('.popup-add__save');
 const buttonAddPopupClose = document.querySelector('.popup-add__close');
-const addPopup = document.querySelector('.popup-add');
+const popupAddCard = document.querySelector('.popup-add');
 const formAddCardsElement = document.querySelector('.popup__form-card');
 
 
@@ -59,33 +60,53 @@ const fullImgFoto = document.querySelector('.popup__img');
 const popupActive = document.querySelector('.popup_opened');
 
 
-// Модальное окно 'редактирование профиля'
-function openedPopup(modal) {
-    modal.classList.add('popup_opened');
+// "Серим кнопку" отключение кнопки
+const buttonAddSubmit = (buttonElement) => {
+    buttonElement.classList.add('popup__save_disabled');
+    buttonElement.disabled = true;
 }
 
-function handlerOverley(evt) {
+// Модальное окно открытие
+// и закрытие через "esc"
+function openedPopup(modal) {
+    modal.classList.add('popup_opened');
+    buttonAddSubmit(buttonAddPopupSubmit);
+    document.addEventListener('keydown', closePopupKeyEsc);
+}
+
+// Модальное окно закрытие
+function closePopup(modal) {
+    modal.classList.remove('popup_opened');
+    document.removeEventListener('keydown', closePopupKeyEsc);
+}
+
+// Функция для закрытие через кнопку - "esc"
+const closePopupKeyEsc = (evt) => {
+    if (evt.key == 'Escape') {
+        closePopup(document.querySelector('.popup_opened'));
+    };
+}
+
+// Функция для закрытие через клик по фону - "overlay"
+const handlerOverley = (evt) => {
     if (!evt.target.closest('.popup__container')) {
             closePopup(evt.target.closest('.popup'));
         }
     }
 
-function closePopup(modal) {
-    modal.classList.remove('popup_opened');
-}
-
-function formAddSubmitHandler(evt) {
+// Отправление формы "новое место" 
+function submitEditProfileForm(evt) {
     evt.preventDefault();
     const inputTextLink = inputLinkElements.value;
     const inputTextTitle = inputTitleElements.value;
     const data = {
         name: inputTextTitle,
         link: inputTextLink
-    };
+    }
     const newItem = composeItem(data);
     initialCardsList.prepend(newItem);
     formAddCardsElement.reset();
-    closePopup(addPopup);
+    closePopup(popupAddCard);
 }
 
 // Модальное окно 'редактирование профиля и отправка'
@@ -103,7 +124,7 @@ function renderList() {
     initialCardsList.append(...listItemCard);
 }
 
-
+// Создание карточки после отправки формы от "новое место"
 function composeItem(item) {
     const newItem = templateElements.content.cloneNode(true);
     const headerElemets = newItem.querySelector('.cards__title');
@@ -114,6 +135,8 @@ function composeItem(item) {
     newItem.querySelector('.cards__rectangle-like').addEventListener('click', function (evt) {
         evt.target.classList.toggle('cards__rectangle-like_active');
     });
+
+// Карзина для удаления карточки с сайта 
     const removeButton = newItem.querySelector('.cards__rectangle-remove');
     removeButton.addEventListener('click', removeItem);
 
@@ -124,11 +147,12 @@ function composeItem(item) {
     return newItem;
 }
 
+// Удаление карточки с сайта
 function removeItem(event) {
     event.target.closest('.cards__card').remove()
 }
 
-
+// Открытие popup картинки на весь экран
 function openCardImage(name, link) {
     cardTitleImage.textContent = name;
     fullImgFoto.src = link;
@@ -137,12 +161,6 @@ function openCardImage(name, link) {
     openedPopup(cardImgPopup);
 }
 
-document.addEventListener('keydown', (evt) => {
-    if (evt.key == 'Escape') {
-        closePopup(document.querySelector('.popup_opened'));
-    }
-    });
-
 // Модальное окно 'редактирование профиля'
 buttonEditPopup.addEventListener('click', function () {
     inputUserName.value = profileName.textContent;
@@ -150,31 +168,35 @@ buttonEditPopup.addEventListener('click', function () {
     openedPopup(editPopup);
 });
 
+// Закрытие popup "редактировать прфоиль" нажатием на крестик
 buttonEditPopupClose.addEventListener('click', function () {
     closePopup(editPopup);
 });
 
-formElement.addEventListener('submit', formSubmitHandler);
+//  Сохранение формы "редактирование профиля"
+formEditProfile.addEventListener('submit', formSubmitHandler);
 
 // Модальное окно 'Добавление места'
 buttonAddPopup.addEventListener('click', function () {
-    openedPopup(addPopup);
+    formAddCardsElement.reset();
+    openedPopup(popupAddCard);
 });
 
+// Закрытие popup "новое место" нажатием на крестик
 buttonAddPopupClose.addEventListener('click', function () {
-    closePopup(addPopup);
+    closePopup(popupAddCard);
 });
 
-
+// Закрытие popup "картинка" нажатием на крестик
 cardCloseImg.addEventListener('click', function () {
     closePopup(cardImgPopup);
 });
 
-formAddCardsElement.addEventListener('submit', formAddSubmitHandler);
+formAddCardsElement.addEventListener('submit', submitEditProfileForm);
 
 editPopup.addEventListener('click', handlerOverley);
 
-addPopup.addEventListener('click', handlerOverley);
+popupAddCard.addEventListener('click', handlerOverley);
 
 cardImgPopup.addEventListener('click', handlerOverley);
 
