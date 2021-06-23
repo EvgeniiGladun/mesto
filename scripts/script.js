@@ -60,17 +60,10 @@ const fullImgFoto = document.querySelector('.popup__img');
 const popupActive = document.querySelector('.popup_opened');
 
 
-// "Серим кнопку" отключение кнопки
-const buttonAddSubmit = (buttonElement) => {
-    buttonElement.classList.add('popup__save_disabled');
-    buttonElement.disabled = true;
-}
-
 // Модальное окно открытие
 // и закрытие через "esc"
-function openedPopup(modal) {
+function openPopup(modal) {
     modal.classList.add('popup_opened');
-    buttonAddSubmit(buttonAddPopupSubmit);
     document.addEventListener('keydown', closePopupKeyEsc);
 }
 
@@ -95,7 +88,7 @@ const handlerOverley = (evt) => {
     }
 
 // Отправление формы "новое место" 
-function submitEditProfileForm(evt) {
+function submitAddCardForm(evt) {
     evt.preventDefault();
     const inputTextLink = inputLinkElements.value;
     const inputTextTitle = inputTitleElements.value;
@@ -106,11 +99,12 @@ function submitEditProfileForm(evt) {
     const newItem = composeItem(data);
     initialCardsList.prepend(newItem);
     formAddCardsElement.reset();
+    disableSubmitButton(buttonAddPopupSubmit);
     closePopup(popupAddCard);
 }
 
 // Модальное окно 'редактирование профиля и отправка'
-function formSubmitHandler(evt) {
+function submitEditProfileForm(evt) {
     evt.preventDefault();
     profileName.textContent = inputUserName.value;
     profileSpecialty.textContent = inputUserSpecialty.value;
@@ -158,14 +152,14 @@ function openCardImage(name, link) {
     fullImgFoto.src = link;
     fullImgFoto.alt = name;
 
-    openedPopup(cardImgPopup);
+    openPopup(cardImgPopup);
 }
 
 // Модальное окно 'редактирование профиля'
 buttonEditPopup.addEventListener('click', function () {
     inputUserName.value = profileName.textContent;
     inputUserSpecialty.value = profileSpecialty.textContent;
-    openedPopup(editPopup);
+    openPopup(editPopup);
 });
 
 // Закрытие popup "редактировать прфоиль" нажатием на крестик
@@ -174,12 +168,12 @@ buttonEditPopupClose.addEventListener('click', function () {
 });
 
 //  Сохранение формы "редактирование профиля"
-formEditProfile.addEventListener('submit', formSubmitHandler);
+formEditProfile.addEventListener('submit', submitEditProfileForm);
 
 // Модальное окно 'Добавление места'
 buttonAddPopup.addEventListener('click', function () {
     formAddCardsElement.reset();
-    openedPopup(popupAddCard);
+    openPopup(popupAddCard);
 });
 
 // Закрытие popup "новое место" нажатием на крестик
@@ -192,7 +186,7 @@ cardCloseImg.addEventListener('click', function () {
     closePopup(cardImgPopup);
 });
 
-formAddCardsElement.addEventListener('submit', submitEditProfileForm);
+formAddCardsElement.addEventListener('submit', submitAddCardForm);
 
 editPopup.addEventListener('click', handlerOverley);
 

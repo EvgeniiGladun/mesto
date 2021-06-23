@@ -1,3 +1,9 @@
+// "Серим кнопку" отключение кнопки
+const disableSubmitButton = (buttonAddPopupSubmit) => {
+  buttonAddPopupSubmit.classList.add(validationConfig.inactiveButtonClass);
+  buttonAddPopupSubmit.disabled = true;
+}
+
 // Показываем ошибку в "инпуте" 
 const showInputError = (formElements, inputElement, errorMessage, config) => {
   const errorElement = formElements.querySelector(`.${inputElement.id}-error`);
