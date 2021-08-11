@@ -50,7 +50,7 @@ export default class FormValidator {
       this._submitButtonSelector
     );
     this._inputList.forEach((item) => {
-      item.addEventListener("input", () => {
+      item.addEventListener('input', () => {
         this._isValid(item);
         this._toggleButtonState();
       });
@@ -74,7 +74,7 @@ export default class FormValidator {
     );
 
     this._errorElement.classList.remove(this._errorClass);
-    this._errorElement.textContent = "";
+    this._errorElement.textContent = '';
   }
 
   // Если поля не валидны, ошибки показываются
