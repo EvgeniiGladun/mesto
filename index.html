@@ -52,7 +52,7 @@
         <div class="popup__container">
             <button class="popup__close" type="reset"></button>
             <h2 class="popup__title">Редактировать профиль</h2>
-            <form class="popup__form" action="form-user" name="form-user" novalidate>
+            <form class="popup__form" action="formUser" name="formUser" novalidate>
                     <input id="name-input" class="popup__text popup__text_user_name" type="text" name="name" minlength="2" maxlength="40" placeholder="Имя" required />
                     <span class="popup__text-error name-input-error"></span>
                     <input id="specialty-input" class="popup__text popup__text_user_specialty" type="text" name="specialty" minlength="2" maxlength="200" placeholder="Вид деятельности" required />
@@ -66,12 +66,12 @@
         <div class="popup__container">
             <button class="popup__close popup-add__close" type="reset"></button>
             <h2 class="popup__title">Новое место</h2>
-            <form class="popup__form popup__form-card" action="form-card" name="form-card" novalidate>
+            <form class="popup__form popup__form-card" action="formCard" name="formCard" novalidate>
                     <input id="title-input" class="popup__text popup__text-title" type="text" name="title" placeholder="Название публикаций" minlength="2" maxlength="30" required />
                     <span class="popup__text-error title-input-error"></span>
                     <input id="link-input" class="popup__text popup__text-link" type="url" name="link" placeholder="Ссылка на картинку" required />
                     <span class="popup__text-error link-input-error"></span>
-                    <button class="popup__save popup-add__save popup__save_disabled" type="submit">Создать</button>
+                    <button class="popup__save popup-add__save popup__save_disabled" type="submit" disabled>Создать</button>
             </form>
         </div>
     </section>
