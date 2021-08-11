@@ -79,11 +79,11 @@ export default class FormValidator {
 
   // Если поля не валидны, ошибки показываются
   // Или на оборот, скрываются
-  _isValid(inputSelector, inputElement) {
+  _isValid(inputSelector) {
     if (!inputSelector.validity.valid) {
-      this._showInputError(inputSelector, inputElement);
+      this._showInputError(inputSelector);
     } else {
-      this._hideInputError(inputSelector, inputElement);
+      this._hideInputError(inputSelector);
     }
   }
 
