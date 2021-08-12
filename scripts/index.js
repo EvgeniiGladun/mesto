@@ -158,6 +158,7 @@ buttonAddPopup.addEventListener('click', function () {
 // Закрытие popup 'новое место' нажатием на крестик
 buttonAddPopupClose.addEventListener('click', function () {
   closePopup(popupAddCard);
+  FormValidatorsAdd.reset();
 });
 
 // Закрытие popup 'картинка' нажатием на крестик
