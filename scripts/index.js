@@ -43,12 +43,12 @@ const initialCards = [
 const allCardsList = document.querySelector('.cards');
 
 const buttonEditPopup = document.querySelector('.profile__edit-button');
+const buttonAddPopup = document.querySelector('.profile__add-button');
 const buttonEditPopupClose = document.querySelector('.popup-edit__close');
 const popupCloseImg = document.querySelector('.popup-img__close');
 const buttonAddPopupClose = document.querySelector('.popup-add__close');
 const editPopup = document.querySelector('.popup');
 const formEditProfile = document.querySelector('.popup__form');
-const buttonAddPopup = document.querySelector('.profile__add-button');
 const popupAddCard = document.querySelector('.popup-add');
 const formAddCardsElement = document.querySelector('.popup__form-card');
 
@@ -125,12 +125,14 @@ function renderList() {
   });
 }
 
+// Форма валидации 'новое место'
 const formValidatorsAdd = new FormValidator(
   validationConfig,
   formAddCardsElement
 );
 formValidatorsAdd.enableValidation();
 
+// Форма валидации 'Редактировать профиль'
 const formValidatorEdit = new FormValidator(validationConfig, formEditProfile);
 formValidatorEdit.enableValidation();
 

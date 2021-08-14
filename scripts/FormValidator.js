@@ -87,10 +87,12 @@ export default class FormValidator {
     }
   }
 
+  // Включение валидации
   enableValidation() {
     this._setEventListeners();
   }
 
+  // Перезапуск форм и кнопок
   reset() {
     this._formElement.reset();
     this._toggleButtonState();

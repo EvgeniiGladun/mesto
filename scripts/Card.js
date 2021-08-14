@@ -20,9 +20,9 @@ export default class Card {
   // Открытие картинки карточки на весь экран
   _openCardImage() {
     this._bigImageCard = cardImgPopup
-    .querySelector('.popup__img');
+      .querySelector('.popup__img');
     this._titleImgPopup = cardImgPopup
-    .querySelector('.popup__title_img');
+      .querySelector('.popup__title_img');
     this._bigImageCard.setAttribute('src', this._link);
     this._bigImageCard.setAttribute('alt', this._name);
     this._titleImgPopup.textContent = this._name;
@@ -52,14 +52,14 @@ export default class Card {
     });
   }
 
+  // Приватный метод для создания скилетов карточкам
   _createCloneCard() {
-    // Приватный метод для создания скилетов карточкам
     const cardElement = document
       .querySelector(this._templateSelector)
       .content.querySelector('.cards__card')
       .cloneNode(true); // делаю клонирование каждой карточки и встраиваю в DOM-дерева
-    return cardElement;  
-    }
+    return cardElement; // Возвращаем 'cardElement'
+  }
 
   // Функция гинераций карточек
   generateCard() {

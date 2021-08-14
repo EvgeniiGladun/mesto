@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <!-- Вверх сайта -->
 
 <head>
@@ -35,7 +36,7 @@
 
 
             <!-- Раздел с карточками сайта -->
-             <section class="cards">
+            <section class="cards">
             </section>
         </main>
 
@@ -47,35 +48,41 @@
     </div>
 
 
-    <!-- Модальное окно -->
+    <!-- Форма "редактировать профиль" -->
     <section class="popup popup-user">
         <div class="popup__container">
             <button class="popup__close popup-edit__close" type="reset"></button>
             <h2 class="popup__title">Редактировать профиль</h2>
             <form class="popup__form" action="formUser" name="formUser" novalidate>
-                    <input id="name-input" class="popup__text popup__text_user_name" type="text" name="name" minlength="2" maxlength="40" placeholder="Имя" required />
-                    <span class="popup__text-error name-input-error"></span>
-                    <input id="specialty-input" class="popup__text popup__text_user_specialty" type="text" name="specialty" minlength="2" maxlength="200" placeholder="Вид деятельности" required />
-                    <span class="popup__text-error specialty-input-error"></span>
-                    <button class="popup__save" type="submit">Сохранить</button>
+                <input id="name-input" class="popup__text popup__text_user_name" type="text" name="name" minlength="2"
+                    maxlength="40" placeholder="Имя" required />
+                <span class="popup__text-error name-input-error"></span>
+                <input id="specialty-input" class="popup__text popup__text_user_specialty" type="text" name="specialty"
+                    minlength="2" maxlength="200" placeholder="Вид деятельности" required />
+                <span class="popup__text-error specialty-input-error"></span>
+                <button class="popup__save" type="submit">Сохранить</button>
             </form>
         </div>
     </section>
 
+    <!-- Форма "новое место" -->
     <section class="popup popup-add">
         <div class="popup__container">
             <button class="popup__close popup-add__close" type="reset"></button>
             <h2 class="popup__title">Новое место</h2>
             <form class="popup__form popup__form-card" action="formCard" name="formCard" novalidate>
-                    <input id="title-input" class="popup__text popup__text-title" type="text" name="title" placeholder="Название публикаций" minlength="2" maxlength="30" required />
-                    <span class="popup__text-error title-input-error"></span>
-                    <input id="link-input" class="popup__text popup__text-link" type="url" name="link" placeholder="Ссылка на картинку" required />
-                    <span class="popup__text-error link-input-error"></span>
-                    <button class="popup__save popup-add__save popup__save_disabled" type="submit" disabled>Создать</button>
+                <input id="title-input" class="popup__text popup__text-title" type="text" name="title"
+                    placeholder="Название публикаций" minlength="2" maxlength="30" required />
+                <span class="popup__text-error title-input-error"></span>
+                <input id="link-input" class="popup__text popup__text-link" type="url" name="link"
+                    placeholder="Ссылка на картинку" required />
+                <span class="popup__text-error link-input-error"></span>
+                <button class="popup__save popup-add__save popup__save_disabled" type="submit" disabled>Создать</button>
             </form>
         </div>
     </section>
 
+    <!-- Картинка на весь экран -->
     <section class="popup popup-img">
         <div class="popup__container popup__container_img">
             <button class="popup__close popup-img__close" type="reset" aria-label="Закрыть"></button>
@@ -84,7 +91,7 @@
         </div>
     </section>
 
-<!-- Template -->
+    <!-- Template -->
     <template class="template">
         <div class="cards__card">
             <button class="cards__rectangle-remove" type="button"></button>
@@ -94,7 +101,7 @@
                 <button class="cards__rectangle-like" type="button"></button>
             </div>
         </div>
-        
+
     </template>
 
     <!-- Подключение js и других скриптов -->
