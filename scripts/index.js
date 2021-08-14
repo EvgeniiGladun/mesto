@@ -106,7 +106,7 @@ function submitAddCardForm(evt) {
     link: inputTextLink,
   };
   allCardsList.prepend(itemGenerateCard(data, '.template'));
-  FormValidatorsAdd.reset();
+  formValidatorsAdd.reset();
   closePopup(popupAddCard);
 }
 
@@ -125,14 +125,14 @@ function renderList() {
   });
 }
 
-const FormValidatorsAdd = new FormValidator(
+const formValidatorsAdd = new FormValidator(
   validationConfig,
   formAddCardsElement
 );
-FormValidatorsAdd.enableValidation();
+formValidatorsAdd.enableValidation();
 
-const FormValidatorEdit = new FormValidator(validationConfig, formEditProfile);
-FormValidatorEdit.enableValidation();
+const formValidatorEdit = new FormValidator(validationConfig, formEditProfile);
+formValidatorEdit.enableValidation();
 
 // Модальное окно 'редактирование профиля'
 buttonEditPopup.addEventListener('click', function () {
@@ -141,7 +141,7 @@ buttonEditPopup.addEventListener('click', function () {
   openPopup(editPopup);
 });
 
-// Закрытие popup 'редактировать прфоиль' нажатием на крестик
+// Закрытие popup 'редактировать профиль' нажатием на крестик
 buttonEditPopupClose.addEventListener('click', function () {
   closePopup(editPopup);
 });
@@ -158,7 +158,7 @@ buttonAddPopup.addEventListener('click', function () {
 // Закрытие popup 'новое место' нажатием на крестик
 buttonAddPopupClose.addEventListener('click', function () {
   closePopup(popupAddCard);
-  FormValidatorsAdd.reset();
+  formValidatorsAdd.reset();
 });
 
 // Закрытие popup 'картинка' нажатием на крестик
