@@ -43,11 +43,12 @@ const initialCards = [
 const allCardsList = document.querySelector('.cards');
 
 const buttonEditPopup = document.querySelector('.profile__edit-button');
-const buttonEditPopupClose = document.querySelector('.popup__close');
+const buttonEditPopupClose = document.querySelector('.popup-edit__close');
+const popupCloseImg = document.querySelector('.popup-img__close');
+const buttonAddPopupClose = document.querySelector('.popup-add__close');
 const editPopup = document.querySelector('.popup');
 const formEditProfile = document.querySelector('.popup__form');
 const buttonAddPopup = document.querySelector('.profile__add-button');
-const buttonAddPopupClose = document.querySelector('.popup-add__close');
 const popupAddCard = document.querySelector('.popup-add');
 const formAddCardsElement = document.querySelector('.popup__form-card');
 
@@ -62,7 +63,6 @@ const inputLinkElement = document.querySelector('.popup__text-link');
 const inputTitleElement = document.querySelector('.popup__text-title');
 
 export const cardImgPopup = document.querySelector('.popup-img');
-const popupCloseImg = document.querySelector('.popup-img__close');
 
 // Модальное окно открытие
 // и закрытие через 'esc'
@@ -91,7 +91,7 @@ const handlerOverley = (evt) => {
   }
 };
 
-const itemGenerateCard = (data, templateSelector) => {
+const generateCardItem = (data, templateSelector) => {
   const card = new Card(data, templateSelector);
   return card.generateCard();
 };
@@ -105,7 +105,7 @@ function submitAddCardForm(evt) {
     name: inputTextTitle,
     link: inputTextLink,
   };
-  allCardsList.prepend(itemGenerateCard(data, '.template'));
+  allCardsList.prepend(generateCardItem(data, '.template'));
   formValidatorsAdd.reset();
   closePopup(popupAddCard);
 }
@@ -121,7 +121,7 @@ function submitEditProfileForm(evt) {
 // Функция гинераций карточек
 function renderList() {
   initialCards.forEach((data) => {
-    allCardsList.append(itemGenerateCard(data, '.template'));
+    allCardsList.append(generateCardItem(data, '.template'));
   });
 }
 
@@ -152,13 +152,13 @@ formEditProfile.addEventListener('submit', submitEditProfileForm);
 // Модальное окно 'Добавление места'
 buttonAddPopup.addEventListener('click', function () {
   formAddCardsElement.reset();
+  formValidatorsAdd.reset();
   openPopup(popupAddCard);
 });
 
 // Закрытие popup 'новое место' нажатием на крестик
 buttonAddPopupClose.addEventListener('click', function () {
   closePopup(popupAddCard);
-  formValidatorsAdd.reset();
 });
 
 // Закрытие popup 'картинка' нажатием на крестик

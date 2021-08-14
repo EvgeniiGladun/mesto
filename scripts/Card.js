@@ -19,12 +19,10 @@ export default class Card {
 
   // Открытие картинки карточки на весь экран
   _openCardImage() {
-    this._bigImageCard = document
-      .querySelector('.popup-img')
-      .querySelector('.popup__img');
-    this._titleImgPopup = document
-      .querySelector('.popup-img')
-      .querySelector('.popup__title_img');
+    this._bigImageCard = cardImgPopup
+    .querySelector('.popup__img');
+    this._titleImgPopup = cardImgPopup
+    .querySelector('.popup__title_img');
     this._bigImageCard.setAttribute('src', this._link);
     this._bigImageCard.setAttribute('alt', this._name);
     this._titleImgPopup.textContent = this._name;
@@ -54,18 +52,23 @@ export default class Card {
     });
   }
 
-  // Функция гинераций карточек
-  generateCard() {
+  _createCloneCard() {
     // Приватный метод для создания скилетов карточкам
-    this._cardElement = document
+    const cardElement = document
       .querySelector(this._templateSelector)
       .content.querySelector('.cards__card')
       .cloneNode(true); // делаю клонирование каждой карточки и встраиваю в DOM-дерева
+    return cardElement;  
+    }
+
+  // Функция гинераций карточек
+  generateCard() {
+    this._cardElement = this._createCloneCard();
     this._setEventListeners(); // навешиваю на все карточки слушателей
 
     this._cardImage.src = `${this._link}`; // Встраиваю ссылки для отображения картинки
     this._cardImage.alt = this._name; // Встраиваю заголовки для отображения в <alt>
     this._cardElement.querySelector('.cards__title').textContent = this._name; // Встраиваю заголовки для отображения в карточки
-    return this._cardElement; // Возврашаю метод обратно на 50 строку, для повторного создания скилета карточки
+    return this._cardElement;
   }
 }

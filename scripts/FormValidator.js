@@ -23,8 +23,8 @@ export default class FormValidator {
 
   // Ищем невалидные инпуты, с помощью метода 'some'
   _hasInvalidInput() {
-    return this._inputList.some((inputSelector) => {
-      return !inputSelector.validity.valid;
+    return this._inputList.some((input) => {
+      return !input.validity.valid;
     });
   }
 
@@ -79,11 +79,11 @@ export default class FormValidator {
 
   // Если поля не валидны, ошибки показываются
   // Или на оборот, скрываются
-  _isValid(inputSelector) {
-    if (!inputSelector.validity.valid) {
-      this._showInputError(inputSelector);
+  _isValid(input) {
+    if (!input.validity.valid) {
+      this._showInputError(input);
     } else {
-      this._hideInputError(inputSelector);
+      this._hideInputError(input);
     }
   }
 
