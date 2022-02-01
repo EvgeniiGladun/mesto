@@ -7,7 +7,7 @@
 * Спасибо!
 
 
-**Проект доступен по ссылке - [Mesto](https://ev9enn.github.io/mesto/)**
+**Проект доступен по ссылке - [Mesto](https://EvgeniiGladun.github.io/mesto/)**
 
 
 **О чем проект?**
