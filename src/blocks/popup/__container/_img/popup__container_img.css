@@ -1,6 +1,5 @@
 .popup__container_img {
     display: flex;
-    height: 800px;
     padding: 0;
     width: auto;
     max-height: 75vh;

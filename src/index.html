@@ -6,7 +6,6 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./pages/index.css" />
     <title>Mesto</title>
 </head>
 
@@ -15,18 +14,19 @@
 <body class="body">
     <div class="page">
         <header class="header">
-            <img src="./images/logo.svg" alt="Логотип MESTO" class="logo" />
+            <a href="./"><img src="<%=require('./images/logo.svg')%>" alt="Логотип MESTO" class="logo" /></a>
         </header>
 
         <main class="pages">
+
             <!-- Информация о пользователе -->
             <section class="profile">
-                <img src="./images/avatar/image.jpg" alt="Фото профиля" class="profile__avatar" />
+                <img src="<%=require('./images/avatar/image.jpg')%>" alt="Фото профиля" class="profile__avatar" />
                 <div class="profile__info">
                     <div class="profile__edit-user">
                         <h1 class="profile__name">Жак-Ив Кусто</h1>
                         <button class="profile__edit-button" aria-label="Edit" type="button"><img
-                                class="profile__edit-img" src="./images/edit-button/edit-button.svg"
+                                class="profile__edit-img" src="<%=require('./images/edit-button/edit-button.svg')%>"
                                 alt="Кнопка редактирования профиля" /></button>
                     </div>
                     <h2 class="profile__specialty">Исследователь океана</h2>
@@ -43,13 +43,13 @@
 
         <!-- Подвал сайта -->
         <footer class="footer">
-            <p class="footer__copyright">&copy; 2021 Mesto Russia | E.Gladun</p>
+            <p class="footer__copyright">&copy; 2022 Mesto Russia | E.Gladun</p>
         </footer>
     </div>
 
 
     <!-- Форма "редактировать профиль" -->
-    <section class="popup popup-user">
+    <section class="popup popup-edit">
         <div class="popup__container">
             <button class="popup__close popup-edit__close" type="reset"></button>
             <h2 class="popup__title">Редактировать профиль</h2>
@@ -71,7 +71,7 @@
             <button class="popup__close popup-add__close" type="reset"></button>
             <h2 class="popup__title">Новое место</h2>
             <form class="popup__form popup__form-card" action="formCard" name="formCard" novalidate>
-                <input id="title-input" class="popup__text popup__text-title" type="text" name="title"
+                <input id="title-input" class="popup__text popup__text-title" type="text" name="name"
                     placeholder="Название публикаций" minlength="2" maxlength="30" required />
                 <span class="popup__text-error title-input-error"></span>
                 <input id="link-input" class="popup__text popup__text-link" type="url" name="link"
@@ -104,8 +104,6 @@
 
     </template>
 
-    <!-- Подключение js и других скриптов -->
-    <script type="module" src="./scripts/index.js"></script>
 </body>
 
 </html>

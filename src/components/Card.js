@@ -1,10 +1,12 @@
-import { openPopup, cardImgPopup } from './index.js';
+import { cardImgPopup } from '../utils/constants.js';
+
 
 export default class Card {
-  constructor(data, templateSelector) {
+  constructor(inputValues, templateSelector, handleCardClick) {
     this._templateSelector = templateSelector;
-    this._name = data.name;
-    this._link = data.link;
+    this._handleCardClick = handleCardClick;
+    this._name = inputValues.name;
+    this._link = inputValues.link;
   }
 
   // Удаление карточки с сайта
@@ -27,29 +29,6 @@ export default class Card {
     this._bigImageCard.setAttribute('alt', this._name);
     this._titleImgPopup.textContent = this._name;
 
-    openPopup(cardImgPopup);
-  }
-
-  // Приватный-Метод навешивания слушателей на каждую карту
-  _setEventListeners() {
-    this._removeButton = this._cardElement.querySelector(
-      '.cards__rectangle-remove'
-    );
-    this._buttonLike = this._cardElement.querySelector(
-      '.cards__rectangle-like'
-    );
-    this._cardImage = this._cardElement.querySelector('.cards__image');
-
-    this._removeButton.addEventListener('click', () => {
-      this._removeItem();
-    });
-    this._buttonLike.addEventListener('click', () => {
-      this._likeItem();
-    });
-
-    this._cardImage.addEventListener('click', () => {
-      this._openCardImage();
-    });
   }
 
   // Приватный метод для создания скилетов карточкам
@@ -71,4 +50,26 @@ export default class Card {
     this._cardElement.querySelector('.cards__title').textContent = this._name; // Встраиваю заголовки для отображения в карточки
     return this._cardElement;
   }
+
+  // Приватный-Метод навешивания слушателей на каждую карту
+  _setEventListeners() {
+    this._removeButton = this._cardElement.querySelector('.cards__rectangle-remove');
+    this._buttonLike = this._cardElement.querySelector('.cards__rectangle-like');
+    this._cardImage = this._cardElement.querySelector('.cards__image');
+
+    this._removeButton.addEventListener('click', () => {
+      this._removeItem();
+    });
+
+    this._buttonLike.addEventListener('click', () => {
+      this._likeItem();
+    });
+
+    this._cardImage.addEventListener('click', () => {
+      this._handleCardClick(this._name, this._link);
+    });
+
+
+  }
+
 }
