@@ -5,7 +5,7 @@ export default class Section {
         this._items = items;
         this._renderer = renderer;
 
-        this._container = document.querySelector('.cards');
+        this._container = document.querySelector(containerSelector);
     }
 
     renderItems() {
@@ -17,4 +17,8 @@ export default class Section {
     addItem(element) {
         this._container.append(element);
     };
+
+    prependItem(cardElement) {
+        this._container.prepend(cardElement);
+    }
 }
