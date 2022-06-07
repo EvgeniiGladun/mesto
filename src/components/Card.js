@@ -1,6 +1,3 @@
-import { cardImgPopup } from '../utils/constants.js';
-
-
 export default class Card {
   constructor(inputValues, templateSelector, handleCardClick) {
     this._templateSelector = templateSelector;

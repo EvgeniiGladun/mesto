@@ -93,7 +93,7 @@ export default class FormValidator {
   }
 
   // Перезапуск форм и кнопок
-  reset() {
+  resetValidation() {
     this._formElement.reset();
     this._toggleButtonState();
   }

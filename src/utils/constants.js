@@ -37,12 +37,10 @@ export const initialCards = [
 ];
 
 // Подключенные переменные.
-export const allCardsList = document.querySelector('.cards');
-export const cardsContainer = document.querySelector('.template');
+
 export const buttonEditPopup = document.querySelector('.profile__edit-button');
 export const buttonAddPopup = document.querySelector('.profile__add-button');
-export const popupCloseImg = document.querySelector('.popup-img__close');
+
 export const formEditProfile = document.querySelector('.popup__form');
 export const formAddCardsElement = document.querySelector('.popup__form-card');
-
-export const cardImgPopup = document.querySelector('.popup-img');
+export const popupCloseImg = document.querySelector('.popup-img__close');

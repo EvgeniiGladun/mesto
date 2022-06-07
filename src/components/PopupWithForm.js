@@ -4,15 +4,21 @@ export default class PopupWithForm extends Popup {
     constructor(popupSelector, { handleFormSubmit }) {
         super(popupSelector);
         this._form = this._popup.querySelector('.popup__form');
+        this._inputList = this._form.querySelectorAll('.popup__text');
         this._handleFormSubmit = handleFormSubmit;
+        this._InputsByName = this._getInputsByName();
     }
 
     // Возвращает массив-объектов всех полей формы.
     _getInputValues() {
-        this._formValues = {};
-        this._inputList = Array.from(this._form.querySelectorAll('.popup__text'));
-        this._inputList.forEach(input => this._formValues[input.name] = input.value);
-        return this._formValues;
+
+        this._inputValues = {};
+
+        this._inputList.forEach(input => {
+            this._inputValues[input.name] = input.value;
+        });
+
+        return this._inputValues;
     }
 
     // закрытие формы и сброс полей.
@@ -31,4 +37,19 @@ export default class PopupWithForm extends Popup {
         })
     }
 
+    _getInputsByName() {
+        this._inputListByName = {};
+
+        this._inputList.forEach(input => {
+            this._inputListByName[input.name] = input;
+        });
+
+        return this._inputListByName;
+    }
+
+    setData(formData) {
+        this._InputsByName;
+
+        Object.keys(formData).forEach(key => { this._inputListByName[key] = formData[key] });
+    }
 }
