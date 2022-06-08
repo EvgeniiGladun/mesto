@@ -16,18 +16,6 @@ export default class Card {
     this._buttonLike.classList.toggle('cards__rectangle-like_active');
   }
 
-  // Открытие картинки карточки на весь экран
-  _openCardImage() {
-    this._bigImageCard = cardImgPopup
-      .querySelector('.popup__img');
-    this._titleImgPopup = cardImgPopup
-      .querySelector('.popup__title_img');
-    this._bigImageCard.setAttribute('src', this._link);
-    this._bigImageCard.setAttribute('alt', this._name);
-    this._titleImgPopup.textContent = this._name;
-
-  }
-
   // Приватный метод для создания скилетов карточкам
   _createCloneCard() {
     const cardElement = document

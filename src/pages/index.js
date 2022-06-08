@@ -42,6 +42,7 @@ const formAddCards = new PopupWithForm(
     handleFormSubmit: (inputCardsValues) => {
       const cardElement = createCard(inputCardsValues);
       renderListCards.prependItem(cardElement);
+
       formAddCards.close();
     }
   });
@@ -53,7 +54,6 @@ const formEditCards = new PopupWithForm(
     handleFormSubmit: (inputProfilValues) => {
       profileUserInfo.setUserInfo(inputProfilValues.name, inputProfilValues.specialty);
 
-      formValidatorEdit.resetValidation();
       formEditCards.close();
     }
   });
