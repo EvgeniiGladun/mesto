@@ -103,9 +103,9 @@ buttonAddPopup.addEventListener('click', () => {
 });
 
 // Закрытие Popup нажатием на крестик / overley
-const popupEditCardsClose = new Popup('.popup-edit');
+const popupEditCardsClose = new PopupWithForm('.popup-edit', {});
 popupEditCardsClose.setEventListeners();
-const popupImgCardsClose = new Popup('.popup-img');
+const popupImgCardsClose = new PopupWithImage('.popup-img');
 popupImgCardsClose.setEventListeners();
 
 
