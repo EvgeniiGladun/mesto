@@ -2,7 +2,6 @@ import '../pages/index.css';
 
 import Card from '../components/Card.js';
 import Section from '../components/Section.js';
-import Popup from '../components/Popup.js';
 import PopupWithImage from '../components/PopupWithImage.js';
 import PopupWithForm from '../components/PopupWithForm.js';
 import FormValidator from '../components/FormValidator.js';
@@ -16,13 +15,12 @@ import {
   formAddCardsElement,
 } from '../utils/constants.js'
 
+const imagePopup = new PopupWithImage('.popup-img');
 const handleCardClick = (name, link) => {
-  openPopupImg.open(name, link);
+  imagePopup.open(name, link);
 }
 
 const profileUserInfo = new UserInfo({ userName: '.profile__name', userSpecialty: '.profile__specialty' });
-
-const openPopupImg = new PopupWithImage('.popup-img');
 
 
 const createCard = (inputValues) => {
@@ -48,7 +46,6 @@ const formAddCards = new PopupWithForm(
       formAddCards.close();
     }
   });
-formAddCards.setEventListeners();
 
 // Модальное окно 'редактирование профиля и отправка'
 const formEditCards = new PopupWithForm(
@@ -61,8 +58,6 @@ const formEditCards = new PopupWithForm(
       formEditCards.close();
     }
   });
-formEditCards.setEventListeners();
-
 
 // Функция гинераций карточек
 const renderListCards = new Section({
@@ -74,7 +69,6 @@ const renderListCards = new Section({
 },
   '.cards'
 );
-
 
 // Форма валидации 'новое место'
 const formValidatorsAdd = new FormValidator(
@@ -102,12 +96,10 @@ buttonAddPopup.addEventListener('click', () => {
   formAddCards.open();
 });
 
-// Закрытие Popup нажатием на крестик / overley
-const popupEditCardsClose = new PopupWithForm('.popup-edit', {});
-popupEditCardsClose.setEventListeners();
-const popupImgCardsClose = new PopupWithImage('.popup-img');
-popupImgCardsClose.setEventListeners();
-
+// Вызов "навешивания" на Popup
+imagePopup.setEventListeners();
+formAddCards.setEventListeners();
+formEditCards.setEventListeners();
 
 
 // Рендер карточек на сайт из массива
