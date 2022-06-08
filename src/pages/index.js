@@ -21,6 +21,7 @@ const handleCardClick = (name, link) => {
 }
 
 const profileUserInfo = new UserInfo({ userName: '.profile__name', userSpecialty: '.profile__specialty' });
+const formUserInfo = new UserInfo({ userName: '.popup__text_user_name', userSpecialty: '.popup__text_user_specialty' });
 
 const openPopupImg = new PopupWithImage('.popup-img');
 
@@ -90,8 +91,9 @@ formValidatorEdit.enableValidation();
 // Модальное окно 'редактирование профиля'
 buttonEditPopup.addEventListener('click', () => {
   const userInfo = profileUserInfo.getUserInfo();
-  profileUserInfo.setFormUserInfo();
   formEditCards.setData(userInfo);
+  formUserInfo.setFormUserInfo(userInfo);
+
 
 
   formEditCards.open();
