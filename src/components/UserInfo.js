@@ -18,10 +18,4 @@ export default class UserInfo {
         this._userName.textContent = name;
         this._userSpecialty.textContent = specialty;
     }
-
-    // Принимает новые данные пользователя и добавляет их в форму "редактировать профиль"
-    setFormUserInfo(userData) {
-        this._userName.value = userData.name;
-        this._userSpecialty.value = userData.specialty;
-    }
 }

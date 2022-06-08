@@ -50,6 +50,6 @@ export default class PopupWithForm extends Popup {
     setData(formData) {
         this._InputsByName;
 
-        Object.keys(formData).forEach(key => { this._inputListByName[key] = formData[key] });
+        Object.keys(formData).forEach(key => { this._inputListByName[key].value = formData[key] });
     }
 }

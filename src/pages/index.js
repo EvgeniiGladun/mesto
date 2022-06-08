@@ -21,7 +21,6 @@ const handleCardClick = (name, link) => {
 }
 
 const profileUserInfo = new UserInfo({ userName: '.profile__name', userSpecialty: '.profile__specialty' });
-const formUserInfo = new UserInfo({ userName: '.popup__text_user_name', userSpecialty: '.popup__text_user_specialty' });
 
 const openPopupImg = new PopupWithImage('.popup-img');
 
@@ -92,9 +91,6 @@ formValidatorEdit.enableValidation();
 buttonEditPopup.addEventListener('click', () => {
   const userInfo = profileUserInfo.getUserInfo();
   formEditCards.setData(userInfo);
-  formUserInfo.setFormUserInfo(userInfo);
-
-
 
   formEditCards.open();
 });
