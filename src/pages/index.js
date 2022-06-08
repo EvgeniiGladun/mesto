@@ -42,7 +42,6 @@ const formAddCards = new PopupWithForm(
     handleFormSubmit: (inputCardsValues) => {
       const cardElement = createCard(inputCardsValues);
       renderListCards.prependItem(cardElement);
-      formValidatorsAdd.resetValidation();
       formAddCards.close();
     }
   });
