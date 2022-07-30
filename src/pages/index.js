@@ -16,7 +16,7 @@ import {
   formAddCardsElement,
   formEditUserAvatar,
 } from '../utils/constants.js'
-
+ 
 // Делаем запрос по api для получения информации
 const api = new Api({
 
