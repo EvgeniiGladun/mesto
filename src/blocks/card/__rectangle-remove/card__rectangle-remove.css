@@ -1,4 +1,4 @@
-.cards__rectangle-remove {
+.card__rectangle-remove {
     background-image: url(../../../images/favicon-icon/remove.svg);
     background-repeat: no-repeat;
     background-color: rgba(255, 255, 255, 0);
@@ -12,10 +12,10 @@
     z-index: 1;
 }
 
-.cards__rectangle-remove:hover {
+.card__rectangle-remove:hover {
     opacity: 0.6;
 }
 
-.cards__rectangle-remove:focus {
+.card__rectangle-remove:focus {
     outline: none;
 }

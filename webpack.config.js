@@ -17,6 +17,7 @@ module.exports = {
     },
 
     mode: 'development',
+    devtool: 'source-map',
     devServer: {
         static: path.resolve(__dirname, './dist'), // путь, куда "смотрит" режим разработчика
         compress: true, // это ускорит загрузку в режиме разработки
@@ -78,5 +79,5 @@ module.exports = {
 
         new CleanWebpackPlugin(), // использовали плагин
         new MiniCssExtractPlugin() // подключение плагина для объединения файлов
-    ]
+    ],
 };

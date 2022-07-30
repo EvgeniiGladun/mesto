@@ -5,6 +5,8 @@ export default class PopupWithForm extends Popup {
         super(popupSelector);
         this._form = this._popup.querySelector('.popup__form');
         this._inputList = this._form.querySelectorAll('.popup__text');
+        this._spanError = this._form.querySelectorAll('.popup__text-error');
+        this._arrayBtnForm = this._form.querySelectorAll('[type="submit"]');
         this._handleFormSubmit = handleFormSubmit;
         this._InputsByName = this._getInputsByName();
     }
@@ -21,9 +23,16 @@ export default class PopupWithForm extends Popup {
         return this._inputValues;
     }
 
-    // закрытие формы и сброс полей.
+    // закрытие формы и сброс формы.
     close() {
         super.close();
+        // Проверяем есть ли класс ошибки, true - удаляем || false - пропускаем
+        if (!this._form.checkValidity()) {
+            this._spanError.forEach((input) => {
+                input.classList.remove('popup__text-error_active');
+                input.textContent = '';
+            });
+        }
         this._form.reset();
     }
 
@@ -37,6 +46,7 @@ export default class PopupWithForm extends Popup {
         })
     }
 
+    // Забор информаций из полей 'input'
     _getInputsByName() {
         this._inputListByName = {};
 
@@ -47,9 +57,20 @@ export default class PopupWithForm extends Popup {
         return this._inputListByName;
     }
 
+    // Встраиваем значения в ключи = 'input'
     setData(formData) {
         this._InputsByName;
 
         Object.keys(formData).forEach(key => { this._inputListByName[key].value = formData[key] });
+    }
+
+    // Говорим пользьователю что идёт сохранение
+    changingTextLoading(isTextLoading) {
+        if (isTextLoading) {
+            this._arrayBtnForm.forEach((buttonText) => {
+
+                buttonText.textContent = isTextLoading;
+            })
+        } return;
     }
 }

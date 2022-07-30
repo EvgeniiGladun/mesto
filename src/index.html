@@ -21,22 +21,24 @@
 
             <!-- Информация о пользователе -->
             <section class="profile">
-                <img src="<%=require('./images/avatar/image.jpg')%>" alt="Фото профиля" class="profile__avatar" />
+                <div class="profile__avatar-edit">
+                    <img src="<%=require('./images/avatar/image.jpg')%>" alt="Фото профиля" class="profile__avatar" />
+                </div>
                 <div class="profile__info">
                     <div class="profile__edit-user">
-                        <h1 class="profile__name">Жак-Ив Кусто</h1>
+                        <h1 class="profile__name">Loading...</h1>
                         <button class="profile__edit-button" aria-label="Edit" type="button"><img
                                 class="profile__edit-img" src="<%=require('./images/edit-button/edit-button.svg')%>"
                                 alt="Кнопка редактирования профиля" /></button>
                     </div>
-                    <h2 class="profile__specialty">Исследователь океана</h2>
+                    <h2 class="profile__specialty">Loading...</h2>
                 </div>
                 <button class="profile__add-button" aria-label="Add" type="button"></button>
             </section>
 
 
             <!-- Раздел с карточками сайта -->
-            <section class="cards">
+            <section class="card">
             </section>
         </main>
 
@@ -47,13 +49,47 @@
         </footer>
     </div>
 
+    <!-- Форма "Подтвердить удаление" -->
+    <section class="popup popup-warning">
+
+        <div class="popup__container">
+            <button class="popup__close popup-warning__close" type="reset"></button>
+            <h2 class="popup__title popup__title_warning">Вы уверены?</h2>
+            <form class="popup__form popup__form-warning" action="formWarning" name="formWarning">
+                <button class="popup__confirm" type="submit">Да</button>
+            </form>
+        </div>
+
+    </section>
+
+    <!-- Форма "Обновить аватар" -->
+    <section class="popup popup-avatar">
+
+        <div class="popup__container">
+            <button class="popup__close popup-avatar__close" type="reset"></button>
+            <h2 class="popup__title">Обновить аватар</h2>
+
+            <form class="popup__form popup__form-avatar" action="formAvatar" name="formAvatar" novalidate>
+                <input id="link-input" class="popup__text popup__text-link" type="url" name="link"
+                    placeholder="Ссылка на аватар" required />
+                <span class="popup__text-error link-input-error"></span>
+                <button class="popup__save popup-avatar__save popup__save_disabled" type="submit"
+                    disabled>Сохранить</button>
+            </form>
+
+        </div>
+
+    </section>
+
 
     <!-- Форма "редактировать профиль" -->
     <section class="popup popup-edit">
+
         <div class="popup__container">
             <button class="popup__close popup-edit__close" type="reset"></button>
             <h2 class="popup__title">Редактировать профиль</h2>
-            <form class="popup__form" action="formUser" name="formUser" novalidate>
+
+            <form class="popup__form popup__form-edit" action="formUser" name="formUser" novalidate>
                 <input id="name-input" class="popup__text popup__text_user_name" type="text" name="name" minlength="2"
                     maxlength="40" placeholder="Имя" required />
                 <span class="popup__text-error name-input-error"></span>
@@ -62,14 +98,18 @@
                 <span class="popup__text-error specialty-input-error"></span>
                 <button class="popup__save" type="submit">Сохранить</button>
             </form>
+
         </div>
+
     </section>
 
     <!-- Форма "новое место" -->
     <section class="popup popup-add">
+
         <div class="popup__container">
             <button class="popup__close popup-add__close" type="reset"></button>
             <h2 class="popup__title">Новое место</h2>
+
             <form class="popup__form popup__form-card" action="formCard" name="formCard" novalidate>
                 <input id="title-input" class="popup__text popup__text-title" type="text" name="name"
                     placeholder="Название публикаций" minlength="2" maxlength="30" required />
@@ -79,7 +119,9 @@
                 <span class="popup__text-error link-input-error"></span>
                 <button class="popup__save popup-add__save popup__save_disabled" type="submit" disabled>Создать</button>
             </form>
+
         </div>
+
     </section>
 
     <!-- Картинка на весь экран -->
@@ -93,15 +135,26 @@
 
     <!-- Template -->
     <template class="template">
-        <div class="cards__card">
-            <button class="cards__rectangle-remove" type="button"></button>
-            <img class="cards__image" src="#" alt="" />
-            <div class="cards__discription">
-                <h2 class="cards__title"></h2>
-                <button class="cards__rectangle-like" type="button"></button>
+        <div class="card">
+            <div class="card__cards">
+                <button class="card__rectangle-remove" type="button"></button>
+                <img class="card__image" src="#" alt="" />
+
+                <div class="card__discription">
+                    <h2 class="card__title"></h2>
+
+                    <div class="card__block-actions">
+
+                        <div class="card__like">
+                            <button class="card__rectangle-like" type="button"></button>
+                            <p class="card__quantity-like">0</p>
+                        </div>
+
+                    </div>
+
+                </div>
             </div>
         </div>
-
     </template>
 
 </body>

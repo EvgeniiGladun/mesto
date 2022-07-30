@@ -49,29 +49,38 @@
 
 
 
-/** cards сайта **/
-@import url(../blocks/cards/cards.css);
+/** card сайта **/
+@import url(../blocks/card/card.css);
+
+@import url(../blocks/card/__block-actions/card__block-actions.css);
+@import url(../blocks/card/__quantity-like/card__quantity-like.css);
+@import url(../blocks/popup/__confirm/popup__confirm.css);
+@import url(../blocks/profile/__avatar-edit/profile__avatar-edit.css);
+
 
 /** card сайта **/
-@import url(../blocks/cards/__card/cards__card.css);
+@import url(../blocks/card/__cards/card__cards.css);
 
-/** cards__image сайта **/
-@import url(../blocks/cards/__image/cards__image.css);
+/** card__image сайта **/
+@import url(../blocks/card/__image/card__image.css);
 
 /** discrition сайта **/
-@import url(../blocks/cards/__discrition/cards__discription.css);
+@import url(../blocks/card/__discrition/card__discription.css);
 
-/** cards__title сайта **/
-@import url(../blocks/cards/__title/cards__title.css);
+/** card__title сайта **/
+@import url(../blocks/card/__title/card__title.css);
 
 /** rectangle-like сайта **/
-@import url(../blocks/cards/__rectangle-like/cards__rectangle-like.css);
+@import url(../blocks/card/__rectangle-like/card__rectangle-like.css);
 
 /** rectangle-like_active сайта **/
-@import url(../blocks/cards/__rectangle-like/_active/cards__rectangle-like_active.css);
+@import url(../blocks/card/__rectangle-like/_active/card__rectangle-like_active.css);
 
 /** rectangle-remove сайта **/
-@import url(../blocks/cards/__rectangle-remove/cards__rectangle-remove.css);
+@import url(../blocks/card/__rectangle-remove/card__rectangle-remove.css);
+
+/** rectangle-remove_hide сайта **/
+@import url(../blocks/card/__rectangle-remove/_hide/card__rectangle-remove_hide.css);
 
 
 
@@ -116,6 +125,8 @@
 /** __form сайта **/
 @import url(../blocks/popup/__form/popup__form.css);
 
+/**  popup подтверждения удаления карточки **/
+@import url(../blocks/popup/__title/_warning/popup__title_warning.css);
 
 /** popup для картинок сайта **/
 @import url(../blocks/popup/__img/popup__img.css);
