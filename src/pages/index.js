@@ -96,9 +96,9 @@ const handleCardDelete = (id, data) => {
 }
 
 // Ставим лайк карточке
-const toPutLike = (idPut, card) => {
+const toPutLike = (id, card) => {
 
-  api.pushLike(idPut)
+  api.pushLike(id)
     .then((like) => {
       card.likeItem(like.likes);
     })
@@ -108,9 +108,9 @@ const toPutLike = (idPut, card) => {
 }
 
 // Удаляем лайк с карточки
-const deleteLike = (idDel, card) => {
+const deleteLike = (id, card) => {
 
-  api.deleteLike(idDel)
+  api.deleteLike(id)
     .then((delLike) => {
       card.likeItem(delLike.likes);
     })
