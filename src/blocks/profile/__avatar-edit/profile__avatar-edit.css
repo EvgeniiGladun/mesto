@@ -20,6 +20,7 @@
 
 .profile__avatar-edit:hover::after {
   opacity: 1;
+  cursor: pointer;
 }
 
 .profile__avatar-edit::before {

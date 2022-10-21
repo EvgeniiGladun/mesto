@@ -3,12 +3,11 @@ import Popup from "./Popup.js";
 export default class PopupWithForm extends Popup {
     constructor(popupSelector, { handleFormSubmit }) {
         super(popupSelector);
+        this._handleFormSubmit = handleFormSubmit;
+        // this._hideErrorSpan = hideErrorSpan;
         this._form = this._popup.querySelector('.popup__form');
         this._inputList = this._form.querySelectorAll('.popup__text');
-        this._spanError = this._form.querySelectorAll('.popup__text-error');
-        this._arrayBtnForm = this._form.querySelectorAll('[type="submit"]');
-        this._handleFormSubmit = handleFormSubmit;
-        this._InputsByName = this._getInputsByName();
+        this._submitBtnForm = this._form.querySelector('[type="submit"]');
     }
 
     // Возвращает массив-объектов всех полей формы.
@@ -26,13 +25,6 @@ export default class PopupWithForm extends Popup {
     // закрытие формы и сброс формы.
     close() {
         super.close();
-        // Проверяем есть ли класс ошибки, true - удаляем || false - пропускаем
-        if (!this._form.checkValidity()) {
-            this._spanError.forEach((input) => {
-                input.classList.remove('popup__text-error_active');
-                input.textContent = '';
-            });
-        }
         this._form.reset();
     }
 
@@ -40,8 +32,8 @@ export default class PopupWithForm extends Popup {
     setEventListeners() {
         super.setEventListeners();
         this._form.addEventListener('submit', (evt) => {
-            evt.preventDefault();
 
+            evt.preventDefault();
             this._handleFormSubmit(this._getInputValues());
         })
     }
@@ -58,19 +50,17 @@ export default class PopupWithForm extends Popup {
     }
 
     // Встраиваем значения в ключи = 'input'
-    setData(formData) {
-        this._InputsByName;
-
-        Object.keys(formData).forEach(key => { this._inputListByName[key].value = formData[key] });
+    setInputValues(data) {
+        this._inputList.forEach((input) => {
+            // тут вставляем в `value` инпута данные из объекта по атрибуту `name` этого инпута
+            input.value = data[input.name];
+        });
     }
 
     // Говорим пользьователю что идёт сохранение
     changingTextLoading(isTextLoading) {
         if (isTextLoading) {
-            this._arrayBtnForm.forEach((buttonText) => {
-
-                buttonText.textContent = isTextLoading;
-            })
-        } return;
+            this._submitBtnForm.textContent = isTextLoading;
+        };
     }
 }

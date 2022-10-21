@@ -14,6 +14,7 @@
 
 .card__rectangle-remove:hover {
     opacity: 0.6;
+    cursor: pointer;
 }
 
 .card__rectangle-remove:focus {

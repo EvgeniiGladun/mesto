@@ -15,5 +15,5 @@
 .card__image:hover {
     opacity: 0.8;
     transform: scale(1.1);
-    cursor: grab;
+    cursor: pointer;
   }

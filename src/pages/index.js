@@ -6,6 +6,7 @@ import Section from '../components/Section.js';
 import PopupWithImage from '../components/PopupWithImage.js';
 import PopupWithForm from '../components/PopupWithForm.js';
 import FormValidator from '../components/FormValidator.js';
+import PopupWithConfirmation from '../components/PopupWithConfirmation.js';
 import UserInfo from '../components/UserInfo.js';
 import {
   validationConfig,
@@ -16,7 +17,7 @@ import {
   formAddCardsElement,
   formEditUserAvatar,
 } from '../utils/constants.js'
- 
+
 // Делаем запрос по api для получения информации
 const api = new Api({
 
@@ -69,7 +70,7 @@ const handleCardClick = (name, link) => {
 }
 
 // Окно "предупреждение" удаления карточки
-const warningPopup = new PopupWithForm(
+const warningPopup = new PopupWithConfirmation(
   '.popup-warning',
   {
     handleFormSubmit: () => {
@@ -94,6 +95,7 @@ const handleCardDelete = (id, data) => {
   idCard = id;
   warningPopup.open();
 }
+
 
 // Ставим лайк карточке
 const toPutLike = (id, card) => {
@@ -181,19 +183,22 @@ const formEditAvatar = new PopupWithForm(
   });
 
 // Модальное окно 'редактирование профиля и отправка'
-const formEditCards = new PopupWithForm(
+const formEditCardProfil = new PopupWithForm(
   '.popup-edit',
   {
     handleFormSubmit: (inputProfilValues) => {
-      profileUserInfo.setUserInfo(inputProfilValues.name, inputProfilValues.specialty);
-      formEditCards.changingTextLoading('Сохранение...');
+
+      formEditCardProfil.changingTextLoading('Сохранение...');
       api.setInitialUsers(inputProfilValues.name, inputProfilValues.specialty)
+        .then((data) => {
+          profileUserInfo.setUserInfo(data.name, data.about);
+        })
         .catch((err) => {
           console.log(err); // выведем ошибку в консоль
         })
-        .finally(() => { formEditCards.changingTextLoading('Сохранить') });
+        .finally(() => { formEditCardProfil.changingTextLoading('Сохранить') });
 
-      formEditCards.close();
+      formEditCardProfil.close();
     }
   });
 
@@ -222,9 +227,9 @@ formValidatorsAvatar.enableValidation();
 // Модальное окно 'редактирование профиля'
 buttonEditPopup.addEventListener('click', () => {
   const userInfo = profileUserInfo.getUserInfo();
-  formEditCards.setData(userInfo);
+  formEditCardProfil.setInputValues(userInfo);
 
-  formEditCards.open();
+  formEditCardProfil.open();
 });
 
 // Модальное окно 'Добавление места'
@@ -242,7 +247,7 @@ buttonEditAvatar.addEventListener('click', () => {
 
 // Вызов "навешивания" на Popup
 imagePopup.setEventListeners();
-formAddCards.setEventListeners();
-formEditCards.setEventListeners();
+formAddCards.setEventListeners(() => { formValidatorsAdd.resetInputValue() });
+formEditCardProfil.setEventListeners(() => { formValidatorEdit.resetInputValue() });
 warningPopup.setEventListeners();
 formEditAvatar.setEventListeners();

@@ -4,19 +4,20 @@ export default class Api {
         this.headers = headers;
     }
 
+    _getResponseData(res) {
+        if (!res.ok) {
+            return Promise.reject(`Ошибка: ${res.status}`);
+        }
+        return res.json();
+    }
+
     // Запрос массив карточек
     getInitialCards() {
         return fetch(this.baseUrl + '/cards', {
             headers: this.headers
         })
             .then((res) => {
-                if (res.ok) {
-
-                    return res.json();
-                }
-
-                // если ошибка, отклоняем промис
-                return Promise.reject(`Ошибка: ${res.status}`);
+                return this._getResponseData(res);
             })
     }
 
@@ -26,12 +27,7 @@ export default class Api {
             headers: this.headers
         })
             .then((res) => {
-                if (res.ok) {
-                    return res.json();
-                }
-
-                // если ошибка, отклоняем промис
-                return Promise.reject(`Ошибка: ${res.status}`);
+                return this._getResponseData(res);
             })
     }
 
@@ -46,11 +42,7 @@ export default class Api {
                 })
             })
             .then((res) => {
-
-                if (res.ok) {
-                    return res.json();
-                }
-                return Promise.reject(`Ошибка: ${res.status}`);
+                return this._getResponseData(res);
             })
     }
 
@@ -64,11 +56,7 @@ export default class Api {
             })
         })
             .then((res) => {
-
-                if (res.ok) {
-                    return res.json();
-                }
-                return Promise.reject(`Ошибка: ${res.status}`);
+                return this._getResponseData(res);
             })
     }
 
@@ -79,11 +67,7 @@ export default class Api {
         })
 
             .then((res) => {
-
-                if (res.ok) {
-                    return res.json();
-                }
-                return Promise.reject(`Ошибка: ${res.status}`);
+                return this._getResponseData(res);
             })
     }
 
@@ -93,11 +77,7 @@ export default class Api {
             headers: this.headers,
         })
             .then((res) => {
-
-                if (res.ok) {
-                    return res.json();
-                }
-                return Promise.reject(`Ошибка: ${res.status}`);
+                return this._getResponseData(res);
             })
     }
 
@@ -107,11 +87,7 @@ export default class Api {
             headers: this.headers,
         })
             .then((res) => {
-
-                if (res.ok) {
-                    return res.json();
-                }
-                return Promise.reject(`Ошибка: ${res.status}`);
+                return this._getResponseData(res);
             })
     }
 
@@ -124,11 +100,7 @@ export default class Api {
             })
         })
             .then((res) => {
-
-                if (res.ok) {
-                    return res.json();
-                }
-                return Promise.reject(`Ошибка: ${res.status}`);
+                return this._getResponseData(res);
             })
     }
 

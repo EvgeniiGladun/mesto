@@ -33,7 +33,8 @@ export default class Popup {
 
     // Закрытие popup 'картинка' нажатием на крестик
     setEventListeners() {
-        this._popup.querySelector('.popup__close').addEventListener('click', (evt) => { this.close(evt) });
+
+        this._popup.querySelector('.popup__close').addEventListener('click', (evt) => { this.close(evt); });
         this._popup.addEventListener('mousedown', (evt) => { this._handlerOverley(evt) });
     }
 }

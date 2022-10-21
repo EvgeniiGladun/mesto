@@ -56,7 +56,7 @@
             <button class="popup__close popup-warning__close" type="reset"></button>
             <h2 class="popup__title popup__title_warning">Вы уверены?</h2>
             <form class="popup__form popup__form-warning" action="formWarning" name="formWarning">
-                <button class="popup__confirm" type="submit">Да</button>
+                <button class="popup__save popup-confirm__save" type="submit">Да</button>
             </form>
         </div>
 
@@ -70,9 +70,9 @@
             <h2 class="popup__title">Обновить аватар</h2>
 
             <form class="popup__form popup__form-avatar" action="formAvatar" name="formAvatar" novalidate>
-                <input id="link-input-avatar" class="popup__text popup__text-link" type="url" name="link"
+                <input id="avatar-input" class="popup__text popup__text-link" type="url" name="link"
                     placeholder="Ссылка на аватар" required />
-                <span class="popup__text-error link-input-error"></span>
+                <span class="popup__text-error avatar-input-error"></span>
                 <button class="popup__save popup-avatar__save popup__save_disabled" type="submit"
                     disabled>Сохранить</button>
             </form>
@@ -114,7 +114,7 @@
                 <input id="title-input" class="popup__text popup__text-title" type="text" name="name"
                     placeholder="Название публикаций" minlength="2" maxlength="30" required />
                 <span class="popup__text-error title-input-error"></span>
-                <input id="link-input-add" class="popup__text popup__text-link" type="url" name="link"
+                <input id="link-input" class="popup__text popup__text-link" type="url" name="link"
                     placeholder="Ссылка на картинку" required />
                 <span class="popup__text-error link-input-error"></span>
                 <button class="popup__save popup-add__save popup__save_disabled" type="submit" disabled>Создать</button>

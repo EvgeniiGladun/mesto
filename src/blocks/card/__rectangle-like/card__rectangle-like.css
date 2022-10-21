@@ -11,6 +11,7 @@
 .card__rectangle-like:hover {
     opacity: 0.5;
     outline: none;
+    cursor: pointer;
 }
 
 .card__rectangle-like:focus {
