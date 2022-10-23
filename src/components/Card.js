@@ -1,5 +1,5 @@
 export default class Card {
-  constructor(data, templateSelector, handleCardClick, handleCardDelete, idUser, toPutLike, deleteLike) {
+  constructor(data, templateSelector, handleCardClick, { handleCardDelete }, idUser, toPutLike, deleteLike) {
     this._templateSelector = templateSelector;
     this._handleCardClick = handleCardClick;
     this._handleCardDelete = handleCardDelete;
@@ -73,7 +73,7 @@ export default class Card {
     // Проверка: Удаление корзины у карточки
     this._removeButton.addEventListener('click', () => {
 
-      this._handleCardDelete(this._idCard, this);
+      this._handleCardDelete(this, this._idCard);
     });
 
     // Удаляем лайк или ставим

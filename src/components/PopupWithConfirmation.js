@@ -15,6 +15,10 @@ export default class PopupWithConfirmation extends Popup {
         };
     }
 
+    handleFormSubmit(deleteCard) {
+        this._handleFormSubmit = deleteCard;
+    }
+
     // Навешиваем слушателей на кнопку отправления
     setEventListeners() {
         super.setEventListeners();

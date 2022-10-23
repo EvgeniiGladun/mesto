@@ -8,7 +8,6 @@ export default class FormValidator {
       inactiveButtonClass,
       inputErrorClass,
       errorClass,
-      spanError,
     },
     formElement
   ) {
@@ -19,8 +18,7 @@ export default class FormValidator {
       (this._submitButtonSelector = submitButtonSelector),
       (this._inactiveButtonClass = inactiveButtonClass),
       (this._inputErrorClass = inputErrorClass),
-      (this._errorClass = errorClass),
-      (this._spanError = spanError);
+      (this._errorClass = errorClass)
   }
 
   // Ищем невалидные инпуты, с помощью метода 'some'
@@ -97,15 +95,14 @@ export default class FormValidator {
   // Перезапуск форм и кнопок
   resetValidation() {
     this._toggleButtonState();
+    this.resetInputError();
   }
 
-  resetInputValue() {
-    if (!this._inputErrorClass.checkValidity()) {
-      this._spanError.forEach((input) => {
+  resetInputError() {
 
-        input.classList.remove('popup__text-error_active');
-        input.textContent = '';
-      });
-    }
+    this._inputList.forEach((input) => {
+
+      this._hideInputError(input);
+    });
   }
 }

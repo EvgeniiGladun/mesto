@@ -28,11 +28,17 @@ const api = new Api({
   },
 });
 
+// Объект секций карточек
+const renderListCards = new Section({
+  renderer: (item) => {
+    const cardElement = createCard(item);
+    renderListCards.addItem(cardElement);
+  }
+},
+  '.card');
+
 // Пременные для карточек и пользователей
-let mapInfoСard = null;
-let renderListCards = null;
 let idUser = null;
-let idCard = null;
 
 // Запрос pull карточек для генераций
 // Запрос и вставка информаций пользователя
@@ -41,16 +47,6 @@ Promise.all([
   api.getInitialUsers(),
 ])
   .then(([cards, infoUsers]) => {
-
-    // Объект секций карточек
-    renderListCards = new Section({
-      renderer: (item) => {
-        const cardElement = createCard(item);
-        renderListCards.addItem(cardElement);
-      }
-    },
-      '.card')
-
 
     // Присвоение id user
     idUser = infoUsers._id;
@@ -73,28 +69,9 @@ const handleCardClick = (name, link) => {
 const warningPopup = new PopupWithConfirmation(
   '.popup-warning',
   {
-    handleFormSubmit: () => {
-      warningPopup.changingTextLoading('Удаление...')
-      api.deleteCard(idCard)
-        .then(() => {
-
-          mapInfoСard.removeItem()
-          warningPopup.close();
-        })
-        .catch((err) => {
-          console.log(err); // выведем ошибку в консоль
-        })
-        .finally(() => { warningPopup.changingTextLoading('Да') });
-    }
-  });
-
-// Всплывающее окно "удаление" карточки
-const handleCardDelete = (id, data) => {
-
-  mapInfoСard = data;
-  idCard = id;
-  warningPopup.open();
-}
+    handleFormSubmit: () => { }
+  },
+);
 
 
 // Ставим лайк карточке
@@ -130,7 +107,28 @@ const createCard = (data) => {
     data,
     '.template',
     handleCardClick,
-    handleCardDelete,
+    // Всплывающее окно "удаление" карточки
+    {
+      handleCardDelete: (mapInfoСard, idCard) => {
+        warningPopup.open();
+
+        warningPopup.handleFormSubmit(() => {
+          {
+            warningPopup.changingTextLoading('Удаление...')
+            api.deleteCard(idCard)
+              .then(() => {
+
+                mapInfoСard.removeItem()
+                warningPopup.close();
+              })
+              .catch((err) => {
+                console.log(err); // выведем ошибку в консоль
+              })
+              .finally(() => { warningPopup.changingTextLoading('Да') });
+          }
+        })
+      }
+    },
     idUser,
     toPutLike,
     deleteLike
@@ -228,6 +226,7 @@ formValidatorsAvatar.enableValidation();
 buttonEditPopup.addEventListener('click', () => {
   const userInfo = profileUserInfo.getUserInfo();
   formEditCardProfil.setInputValues(userInfo);
+  formValidatorEdit.resetValidation();
 
   formEditCardProfil.open();
 });
@@ -247,7 +246,7 @@ buttonEditAvatar.addEventListener('click', () => {
 
 // Вызов "навешивания" на Popup
 imagePopup.setEventListeners();
-formAddCards.setEventListeners(() => { formValidatorsAdd.resetInputValue() });
-formEditCardProfil.setEventListeners(() => { formValidatorEdit.resetInputValue() });
+formAddCards.setEventListeners();
+formEditCardProfil.setEventListeners();
 warningPopup.setEventListeners();
 formEditAvatar.setEventListeners();

@@ -6,7 +6,6 @@ export const validationConfig = {
   inactiveButtonClass: 'popup__save_disabled',
   inputErrorClass: 'popup__text_type_error',
   errorClass: 'popup__text-error_active',
-  spanError: '.popup__text-error',
 };
 
 // Подключенные переменные.
