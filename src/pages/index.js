@@ -21,9 +21,9 @@ import {
 // Делаем запрос по api для получения информации
 const api = new Api({
 
-  baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-42',
+  baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-52',
   headers: {
-    authorization: '10bfebb4-ba2e-4ed9-ba69-71cc4db2b227',
+    authorization: 'b196677a-3080-4bcc-9e6b-17cac3a4c3c9',
     'Content-Type': 'application/json'
   },
 });
@@ -68,9 +68,6 @@ const handleCardClick = (name, link) => {
 // Окно "предупреждение" удаления карточки
 const warningPopup = new PopupWithConfirmation(
   '.popup-warning',
-  {
-    handleFormSubmit: () => { }
-  },
 );
 
 
@@ -112,7 +109,7 @@ const createCard = (data) => {
       handleCardDelete: (mapInfoСard, idCard) => {
         warningPopup.open();
 
-        warningPopup.handleFormSubmit(() => {
+        warningPopup.setSomeMethod(() => {
           {
             warningPopup.changingTextLoading('Удаление...')
             api.deleteCard(idCard)

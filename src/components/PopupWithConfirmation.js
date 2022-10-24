@@ -1,9 +1,8 @@
 import Popup from "./Popup.js";
 
 export default class PopupWithConfirmation extends Popup {
-    constructor(popupSelector, { handleFormSubmit }) {
+    constructor(popupSelector) {
         super(popupSelector);
-        this._handleFormSubmit = handleFormSubmit;
         this._form = this._popup.querySelector('.popup__form');
         this._submitBtnForm = this._form.querySelector('[type="submit"]');
     }
@@ -15,8 +14,8 @@ export default class PopupWithConfirmation extends Popup {
         };
     }
 
-    handleFormSubmit(deleteCard) {
-        this._handleFormSubmit = deleteCard;
+    setSomeMethod(deleteCard) {
+        this._setSomeMethod = deleteCard;
     }
 
     // Навешиваем слушателей на кнопку отправления
@@ -25,7 +24,7 @@ export default class PopupWithConfirmation extends Popup {
         this._form.addEventListener('submit', (evt) => {
             evt.preventDefault();
 
-            this._handleFormSubmit();
+            this._setSomeMethod();
         })
     }
 }
