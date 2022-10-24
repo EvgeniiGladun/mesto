@@ -17,10 +17,7 @@
 }
 
 @media (max-width:550px) {
-    .popup__text {
-        margin: 0 auto 21px;
-    }
     .popup__text:last-of-type {
-        margin-bottom: 45px;
+        /* margin-bottom: 45px; */
     }
 }
