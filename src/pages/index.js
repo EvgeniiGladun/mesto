@@ -186,7 +186,7 @@ const formEditCardProfil = new PopupWithForm(
       formEditCardProfil.changingTextLoading('Сохранение...');
       api.setInitialUsers(inputProfilValues.name, inputProfilValues.specialty)
         .then((data) => {
-          profileUserInfo.setUserInfo(data.name, data.about);
+          profileUserInfo.setUserInfo(data.name, data.about, data.avatar);
         })
         .catch((err) => {
           console.log(err); // выведем ошибку в консоль

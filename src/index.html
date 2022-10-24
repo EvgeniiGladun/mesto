@@ -73,7 +73,9 @@
             <form class="popup__form popup__form-avatar" action="formAvatar" name="formAvatar" novalidate>
                 <input id="avatar-input" class="popup__text popup__text-link" type="url" name="link"
                     placeholder="Ссылка на аватар" required />
-                <span class="popup__text-error avatar-input-error"></span>
+                <div class="popup__text-block">
+                    <span class="popup__text-error avatar-input-error"></span>
+                </div>
                 <button class="popup__save popup-avatar__save popup__save_disabled" type="submit"
                     disabled>Сохранить</button>
             </form>
@@ -93,10 +95,14 @@
             <form class="popup__form popup__form-edit" action="formUser" name="formUser" novalidate>
                 <input id="name-input" class="popup__text popup__text_user_name" type="text" name="name" minlength="2"
                     maxlength="40" placeholder="Имя" required />
-                <span class="popup__text-error name-input-error"></span>
+                <div class="popup__text-block">
+                    <span class="popup__text-error name-input-error"></span>
+                </div>
                 <input id="specialty-input" class="popup__text popup__text_user_specialty" type="text" name="specialty"
                     minlength="2" maxlength="200" placeholder="Вид деятельности" required />
-                <span class="popup__text-error specialty-input-error"></span>
+                <div class="popup__text-block">
+                    <span class="popup__text-error specialty-input-error"></span>
+                </div>
                 <button class="popup__save" type="submit">Сохранить</button>
             </form>
 
@@ -114,10 +120,14 @@
             <form class="popup__form popup__form-card" action="formCard" name="formCard" novalidate>
                 <input id="title-input" class="popup__text popup__text-title" type="text" name="name"
                     placeholder="Название публикаций" minlength="2" maxlength="30" required />
-                <span class="popup__text-error title-input-error"></span>
+                <div class="popup__text-block">
+                    <span class="popup__text-error title-input-error"></span>
+                </div>
                 <input id="link-input" class="popup__text popup__text-link" type="url" name="link"
                     placeholder="Ссылка на картинку" required />
-                <span class="popup__text-error link-input-error"></span>
+                <div class="popup__text-block">
+                    <span class="popup__text-error link-input-error"></span>
+                </div>
                 <button class="popup__save popup-add__save popup__save_disabled" type="submit" disabled>Создать</button>
             </form>
 

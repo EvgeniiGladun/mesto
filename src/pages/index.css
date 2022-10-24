@@ -115,6 +115,8 @@
 /** __text сайта **/
 @import url(../blocks/popup/__text/popup__text.css);
 
+@import url(../blocks/popup/__text-block/popup__text-block.css);
+
 /** __text_type_error сайта **/
 @import url(../blocks/popup/__text/_type/_error/popup__text_type_error.css);
 
@@ -131,3 +133,4 @@
 @import url(../blocks/popup/__img/popup__img.css);
 @import url(../blocks/popup/__container/_img/popup__container_img.css);
 @import url(../blocks/popup/__title/_img/popup__title_img.css);
+@import url(../blocks/popup/__popup-img/popup__popup-img.css);

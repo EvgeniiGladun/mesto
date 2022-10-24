@@ -1,5 +1,6 @@
 .popup__text-error {
-    margin: 5px 0 0;
+    display: block;
+    margin: 0;
     color: red;
     font-family: Inter;
     font-style: normal;
