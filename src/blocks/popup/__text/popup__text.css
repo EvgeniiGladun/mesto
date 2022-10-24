@@ -11,13 +11,3 @@
     background-color: transparent;
     outline: none;
 }
-
-.popup__text:first-child {
-    margin-top: 0;
-}
-
-@media (max-width:550px) {
-    .popup__text:last-of-type {
-        /* margin-bottom: 45px; */
-    }
-}

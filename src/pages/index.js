@@ -187,13 +187,12 @@ const formEditCardProfil = new PopupWithForm(
       api.setInitialUsers(inputProfilValues.name, inputProfilValues.specialty)
         .then((data) => {
           profileUserInfo.setUserInfo(data.name, data.about, data.avatar);
+          formEditCardProfil.close();
         })
         .catch((err) => {
           console.log(err); // выведем ошибку в консоль
         })
         .finally(() => { formEditCardProfil.changingTextLoading('Сохранить') });
-
-      formEditCardProfil.close();
     }
   });
 
