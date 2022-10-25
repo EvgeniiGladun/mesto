@@ -4,7 +4,6 @@ export default class PopupWithForm extends Popup {
     constructor(popupSelector, { handleFormSubmit }) {
         super(popupSelector);
         this._handleFormSubmit = handleFormSubmit;
-        // this._hideErrorSpan = hideErrorSpan;
         this._form = this._popup.querySelector('.popup__form');
         this._inputList = this._form.querySelectorAll('.popup__text');
         this._submitBtnForm = this._form.querySelector('[type="submit"]');
@@ -57,10 +56,17 @@ export default class PopupWithForm extends Popup {
         });
     }
 
-    // Говорим пользьователю что идёт сохранение
+    // Говорим пользователю что идёт сохранение
     changingTextLoading(isTextLoading) {
-        if (isTextLoading) {
             this._submitBtnForm.textContent = isTextLoading;
-        };
+            this._submitBtnForm.style.color = 'white';
+            this._submitBtnForm.style.background = 'rgb(0, 0, 0)';
     }
+
+        // Говорим пользователю что получили ошибку
+        changingTextError(isTextError) {
+                this._submitBtnForm.textContent = isTextError;
+                // this._submitBtnForm.style.color = 'red';
+                this._submitBtnForm.style.background = 'red'; 
+        }
 }
