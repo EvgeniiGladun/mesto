@@ -59,14 +59,5 @@ export default class PopupWithForm extends Popup {
     // Говорим пользователю что идёт сохранение
     changingTextLoading(isTextLoading) {
             this._submitBtnForm.textContent = isTextLoading;
-            this._submitBtnForm.style.color = 'white';
-            this._submitBtnForm.style.background = 'rgb(0, 0, 0)';
     }
-
-        // Говорим пользователю что получили ошибку
-        changingTextError(isTextError) {
-                this._submitBtnForm.textContent = isTextError;
-                // this._submitBtnForm.style.color = 'red';
-                this._submitBtnForm.style.background = 'red'; 
-        }
 }
