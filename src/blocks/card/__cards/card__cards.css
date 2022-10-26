@@ -1,4 +1,5 @@
 .card__cards {
+  min-height: 282px;
   max-width: 282px;
   margin: 0;
   background-color: #ffffff;

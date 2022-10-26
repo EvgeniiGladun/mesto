@@ -11,6 +11,7 @@
     font-weight: normal;
     font-size: 18px;
     line-height: 22px;
+    transition: all .5s ease-in-out;
 }
 
 .popup__save:hover {
@@ -21,7 +22,7 @@
 @media (max-width:550px) {
     .popup__save {
         height: 46px;
-        width: 238px;
+        width: 100%;
         font-size: 14px;
         line-height: 17px;
     }

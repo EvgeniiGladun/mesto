@@ -8,6 +8,7 @@
     color: #fff;
     align-items: flex-start;
     flex-direction: column;
+    transition: all 500ms ease-in-out;
 }
 
 @media (max-width:550px) {

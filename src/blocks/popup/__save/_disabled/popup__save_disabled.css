@@ -17,7 +17,7 @@
 @media (max-width:550px) {
     .popup__save_disabled {
         height: 46px;
-        width: 238px;
+        width: 100%;
         font-size: 14px;
         line-height: 17px;
     }

@@ -6,6 +6,7 @@
   grid-row-gap: 20px;
   grid-column-gap: 17px;
   grid-template-columns: repeat(auto-fit, minmax(282px, 282px));
+  transition: all 1000ms ease-in-out;
 }
 
 @media (max-width: 910px) {
