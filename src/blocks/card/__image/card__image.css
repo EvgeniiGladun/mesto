@@ -2,7 +2,9 @@
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     height: 282px;
+    min-height: 282px;
     width: 100%;
+    min-width: 282px;
     transition: all .1s ease-in;
     box-sizing: border-box;
     background-size: 50%, contain;
